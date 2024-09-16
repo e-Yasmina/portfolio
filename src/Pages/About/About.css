@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 .blog-slider {
   width: 95%;
   position: relative;
@@ -65,13 +63,12 @@
   width: 300px;
   flex-shrink: 0;
   height: 300px;
-  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  background-image: linear-gradient(147deg, #3e4aeb 0%, #ffbfb5 100%);
   box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
   border-radius: 20px;
-  /* transform: translateX(-200px);
-  transform: translateY(-140px); */
   transform: translate(-80px, -140px);
   overflow: hidden;
+
 }
 
 .blog-slider__img:after {
@@ -81,10 +78,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  background-image: url('https://img.freepik.com/premium-vector/pink-blue-floral-with-leaf-pattern_54591-171.jpg?w=740'); 
   border-radius: 20px;
-  opacity: 0.8;
-}
+  opacity: 0.3;
+} 
 
 .blog-slider__img img {
   width: 100%;
@@ -140,7 +137,7 @@
 }
 
 .blog-slider__content > * {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(25px);
   transition: all 0.4s;
 }
@@ -167,7 +164,7 @@
 
 .blog-slider__button {
   display: inline-flex;
-  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  background-image: linear-gradient(147deg, #3e4aeb 0%, #ffbfb5 80%);
   padding: 15px 35px;
   border-radius: 50px;
   color: #fff;

@@ -1,6 +1,6 @@
 .App {
   background-color: #ffbfb5;
-  background-image: linear-gradient(147deg, #ffbfb5 0%, #3e4aeb 90%);
+  background-image: linear-gradient(147deg, #ffbfb5 0%, #3e4aeb 100%);
   min-height: 100vh;
   font-family: 'Fira Sans', sans-serif;
   display: flex;
