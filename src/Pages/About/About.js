@@ -1,23 +1,31 @@
-import React, { useEffect } from 'react';
-import 'swiper/swiper-bundle.css';
+import React from 'react';
 import './About.css';
+import { motion } from 'framer-motion';
 
-import '../../Components/ImgHolder/ImgHolder';
 import ImgHolder from '../../Components/ImgHolder/ImgHolder';
-import Content from '../../Components/AboutContent/AboutContent';
+import AboutContent from '../../Components/AboutContent/AboutContent';
 
-const About = () => {
-
+const Layout = () => {
   return (
-    <div className="About">
-      <div className="About__wrp ">
-        <div className="About__item ">
-          <ImgHolder/>
-          <Content/>
-        </div>
-        </div>
+    <motion.div 
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.3, // Delay between child animations
+          },
+        },
+      }}
+    >
+    <div className="Layout">
+      <ImgHolder />
+      <AboutContent />
     </div>
+    </motion.div>
   );
 };
 
-export default About;
+export default Layout;
