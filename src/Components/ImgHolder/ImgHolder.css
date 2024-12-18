@@ -1,0 +1,62 @@
+.ImgHolder img {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+.ImgHolder{
+    width: 300px;
+    flex-shrink: 0;
+    height: 300px;
+    background-image: linear-gradient(147deg, #3e4aeb 0%, #ffbfb5 100%);
+    box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
+    border-radius: 20px;
+    transform: translate(-80px, -140px);
+    overflow: hidden;
+  
+  }
+  
+  .ImgHolder:after {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/premium-vector/pink-blue-floral-with-leaf-pattern_54591-171.jpg?w=740'); 
+    border-radius: 20px;
+    opacity: 0.3;
+  } 
+  
+  .ImgHolder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* opacity: 0; */
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .ImgHolder {
+      width: 45%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .ImgHolder {
+      transform: translateY(-50%);
+      width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .ImgHolder {
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-height: 500px) and (min-width: 992px) {
+    .ImgHolder {
+      height: 270px;
+    }
+  }

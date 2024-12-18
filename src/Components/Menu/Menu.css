@@ -1,0 +1,85 @@
+
+/* .square0 {
+    width: 50px;  
+    height:100px; 
+    border-top: 5px solid #000000;
+    border-left: 5px solid #000000; 
+    background-color: transparent; 
+    margin: 50px 50px 0px 50px auto; 
+}
+.square1 {
+    width: 200px; 
+    height:70px;
+    border-bottom: 5px solid #000000;
+    border-right: 5px solid #000000; 
+    background-color: transparent; 
+    margin: -100px -150px auto;
+}
+.square2 {
+    width: 70px; 
+    height:40px;
+    border-top: 5px solid #000000;
+    border-left: 5px solid #000000; 
+   
+    background-color: transparent; 
+    margin: -40px -150px auto;
+}
+.square3 {
+    width: 70px; 
+    height:80px;
+    border-right: 5px solid #000000; 
+    background-color: transparent; 
+    margin: -40px -150px auto;
+}
+.square4 {
+    width: 70px; 
+    height: 80px;
+    border-right: 5px solid #000000; 
+    background-color: transparent; 
+    margin: -40px -150px auto;
+}
+.square5 {
+    width: 250px; 
+    height:30px;
+    border-bottom: 5px solid #000000;
+    border-right: 5px solid #000000; 
+    background-color: transparent; 
+    margin: -90px 10px 0px 20px ;
+}
+.square6 {
+    width: 140px; 
+    height:70px;
+    border-top: 5px solid #000000;
+    border-left: 5px solid #000000; 
+    background-color: transparent; 
+    margin: -30px 0px 0px 130px ;
+} */
+.square {
+    background-color:transparent;
+    border: 5px solid transparent; /* Set default border to avoid repeating */
+    margin: auto;
+    /* border-image: linear-gradient(147deg, #ffbfb5 0%, #3e4aeb 100%);
+    border-image-slice: 1; */
+}
+
+.size0 { width: 50px; height: 100px; }
+.size1 { width: 200px; height: 70px; }
+.size2 { width: 70px; height: 40px; }
+.size3, .size4 { width: 70px; height: 80px; }
+.size5 { width: 250px; height: 30px; }
+.size6 { width: 140px; height: 70px; }
+
+.border-top-left { border-top-color: #000; border-left-color: #000; }
+.border-bottom-right { border-bottom-color: #000; border-right-color: #000; }
+.border-top { border-top-color: #000; }
+.border-right { border-right-color: #000; }
+/* .border-top-left { border-top-style: solid; border-left-style: solid; }
+.border-bottom-right { border-bottom-style: solid; border-right-style: solid; }
+.border-top { border-top-style: solid; }
+.border-right { border-right-style: solid; } */
+
+.margin0 { margin: 50px 0px 0 0px; }
+.margin1 { margin: -100px -150px 0; }
+.margin2 { margin: -40px -150px 0; }
+.margin5 { margin: -90px 10px 0 20px; }
+.margin6 { margin: -30px 0 0 130px; }
