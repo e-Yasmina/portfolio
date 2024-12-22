@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  /* background: #dcd9cd; */
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-item {
+  list-style: none;
+  text-align: center;
+}
+
+.menu-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 3em;
+  padding: 5px 20px;
+  display: inline-flex;
+  font-weight: 700;
+  position: relative;
+  transition: 0.5s;
+}
+
+.menu:hover .menu-link {
+  color: #0002;
+}
+
+.menu-item:hover .menu-link {
+  color: #000;
+  background: transparent;
+}
+
+.menu-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 500px;
+  transition: letter-spacing 0.5s, left 0.5s, opacity 0.5s;
+}
+
+.menu-link:hover::before {
+  content: attr(data-text);
+  opacity: 1;
+  left: 50%;
+  letter-spacing: 10px;
+  width: 1800px;
+  height: 1800px;
+}
+
+.menu-item:nth-child(6n+1) .menu-link::before {
+  background-color: #ffbfb5;
+  background-image: linear-gradient(147deg, #3e4aeb  0%, #ffbfb5 100%);
+}
+.menu-item:nth-child(6n+2) .menu-link::before {
+  background-color: #ffbfb5;
+  background-image: linear-gradient(147deg, #ffbfb5  20%, #3e4aeb 100%);
+}
+.menu-item:nth-child(6n+3) .menu-link::before {
+  background-color: #ffbfb5;
+  background-image: linear-gradient(147deg, #3e4aeb  20%, #ffbfb5 100%);
+}
+.menu-item:nth-child(6n+4) .menu-link::before {
+  background-color: #ffbfb5;
+  background-image: linear-gradient(147deg, #ffbfb5  30%, #3e4aeb 80%);
+}
+.menu-item:nth-child(6n+5) .menu-link::before {
+  background-color: #ffbfb5;
+  background-image: linear-gradient(147deg, #3e4aeb  30%, #ffbfb5 80%);
+}
+.menu-item:nth-child(6n+6) .menu-link::before {
+  background: #3e4aeb;
+  background-image: linear-gradient(147deg, #ffbfb5  40%,  #3e4aeb 80%);
+}
+.menu-item:nth-child(6n+7) .menu-link::before {
+  background: #3e4aeb;
+  background-image: linear-gradient(147deg, #3e4aeb  40%, #ffbfb5 80%);
+}

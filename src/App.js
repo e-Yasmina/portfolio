@@ -1,13 +1,20 @@
 import './App.css';
-//import './BlogSlider/BlogSlider'
-// import BlogSlider from './BlogSlider/BlogSlider';
-import BlogSlider from './Pages/About/About';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from './Pages/About/About';
+import Menu from './Pages/Menu/Menu';
+
+
 function App() {
   return (
-    <div className="App">
-      <BlogSlider/>
-
-    </div>
+    <Router>
+      <nav>
+        {/* <a href="Portfolio/">About</a> | <a href="Portfolio/Menu">Menu</a>  */}
+      </nav>
+      <Routes>
+        <Route path="Portfolio" element={<Layout />} />
+        <Route path="Portfolio/menu" element={<Menu/>} />
+      </Routes>
+    </Router>
   );
 }
 

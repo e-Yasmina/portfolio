@@ -6,7 +6,6 @@ import './ImgHolder.css';
 const ImgHolder = () => {
   return (
     <motion.div
-    className="blog-slider__img"
       initial={{ x: '-100vw', opacity: 0 }} // Start off-screen to the left
       animate={{ x: 0, opacity: 1 }}       // Animate to its final position
       transition={{ type: 'tween', stiffness: 30, duration: 2 }}
