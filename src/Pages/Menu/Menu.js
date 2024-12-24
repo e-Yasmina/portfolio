@@ -26,7 +26,7 @@ const Menu = () => {
   return (
     <motion.div
     initial={{ scale: 0, opacity: 0, rotateX: 0 }} // Start small, invisible, and no rotation
-    animate={{ scale: 1, opacity: 1, rotateX: 1800}} // Grow to full size, visible, and flip
+    animate={{ scale: 1, opacity: 1, rotateX: 1440}} // Grow to full size, visible, and flip
         transition={{
           duration: 2, // Animation duration
           ease: "easeInOut", // Smooth easing for the flipping effect

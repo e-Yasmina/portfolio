@@ -37,22 +37,43 @@
     transition: all 0.3s;
   }
   
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 992px) and (min-width: 780px)  {
+    .ImgHolder {
+      transform: translate(-80px, -320px);
+    }
+  }
+  @media screen and (max-width: 780px) and (min-width: 700px)  {
+    .ImgHolder {
+      transform: translate(-380px, -20px);
+      width: 250px;
+      height: 250px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .ImgHolder {
+      transform: translate(-125px, -20px);
+      width: 250px;
+      height: 230px;
+    }    
+  }
+ 
+  
+  /* @media screen and (max-width: 992px) {
     .ImgHolder {
       width: 45%;
     }
-  }
+  }*/
   
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     .ImgHolder {
       transform: translateY(-50%);
-      width: 90%;
+      width: 50%;
     }
-  }
+  } */
   
-  @media screen and (max-width: 576px) {
+  /*@media screen and (max-width: 576px) {
     .ImgHolder {
-      width: 95%;
+      width: 55%;
     }
   }
   
@@ -60,4 +81,4 @@
     .ImgHolder {
       height: 270px;
     }
-  }
+  } */
