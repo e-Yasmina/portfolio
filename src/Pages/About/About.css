@@ -1,17 +1,27 @@
+
 .Layout {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  min-height: 100vh;
+  font-family: 'Fira Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ImgHolder {
   position: absolute;
-  /* top: -50px;
-  left: -80px; */
   z-index: 10;
 }
 
 .About {
-  margin-top: 100px; /* Adjust spacing to align About content */
+  margin-top: 100px; 
+}  
+
+@media screen and (max-width: 768px) {
+  .Layout {
+    flex-direction: column;
+  }
 }

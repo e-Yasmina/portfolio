@@ -1,0 +1,49 @@
+/* Background gradient for the page */
+.not-available-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(135deg, #ffbfb5 0%, #3e4aeb 100%); */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Centered content box */
+  .content-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white background */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Heading style */
+  .content-box h1 {
+    font-size: 2.5rem;
+    color: #3e4aeb; /* Primary text color */
+    margin-bottom: 1rem;
+  }
+  
+  /* Paragraph style */
+  .content-box p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Button style */
+  .go-back-btn {
+    background-color: #3e4aeb;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .go-back-btn:hover {
+    background-color: #2d37b0;
+  }
+  
