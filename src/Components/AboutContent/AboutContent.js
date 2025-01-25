@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-
 import './AboutContent.css';
 
-const AboutContent = ({ onButtonClick }) => {
+const AboutContent = ({ onButtonClick, handleContactClick }) => {
 
   return (
     <motion.div
@@ -13,15 +12,27 @@ const AboutContent = ({ onButtonClick }) => {
     >
     <div className="About">
       <div className="About__wrp ">
+        <button
+          onClick={handleContactClick}
+          className="contact-button">
+          <img
+            src={`${process.env.PUBLIC_URL}/Icons/contact.png`}
+            alt="Contact"
+            className="contact-image"
+          />
+        </button>
         <div className="About__item ">
           <div className="About__content">
             <span className="About__subtitle">About</span>
             <div className="About__title">Yasmina Elbernoussi</div>
             <div className="About__text">
-              I am a Junior Software Engineer specializing in both mobile and web application development. I have hands-on experience with various technologies, including Ionic and Flutter for mobile development, and HTML, JavaScript, CSS, Spring Boot, and Laravel for web development. I am eager to leverage my versatile skill set in a dynamic environment to deliver innovative software solutions.
+            Software Engineer with a solid foundation in full-stack web and mobile development. Skilled in designing, developing, and deploying applications using React, Node.js, Laravel, and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within Agile teams.
             </div>
             <div className="About__text">
-              As a dedicated software engineer with a state engineer diploma, I am passionate about advancing digital healthcare technologies and automation. My research interests lie at the intersection of Health IT and AI, with a focus on improving healthcare outcomes through digital transformation.
+            Holding a state engineer diploma, I am eager to contribute to dynamic environments by delivering impactful and scalable software solutions.
+            </div>
+            <div className="About__text">
+            Passionate about advancing digital healthcare technologies and leveraging Health IT and AI to drive innovation and improve healthcare outcomes.
             </div>
             <button className="About__button" onClick={onButtonClick}>READ MORE</button>
           </div>

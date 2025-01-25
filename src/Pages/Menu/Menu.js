@@ -18,7 +18,7 @@ const Menu = () => {
     { name: "Skills", path: "/Portfolio/notAvailablePage" },
     { name: "Education", path: "/Portfolio/notAvailablePage" },
     { name: "Blogs", path: "/Portfolio/notAvailablePage" },
-    { name: "Contact", path: "/Portfolio/notAvailablePage" },
+    { name: "Contact", path: "/Portfolio/contact" },
     { name: "Resume", path: "/Portfolio/notAvailablePage" },
 
   ];
