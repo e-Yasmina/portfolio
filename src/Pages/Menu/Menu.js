@@ -7,7 +7,7 @@ import "./Menu.css"; // Assuming your CSS animations are here.
 const Menu = () => {
   const items = [
     // { name: "Home", path: "/Portfolio/" },
-    // { name: "Projects", path: "/Portfolio/projects" },
+    //{ name: "Projects", path: "/Portfolio/projects" },
     // { name: "Skills", path: "/Portfolio/skills" },
     // { name: "Education", path: "/Portfolio/education" },
     // { name: "Blogs", path: "/Portfolio/blogs" },

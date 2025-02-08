@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import AnimatedDots from '../AnimatedDots/AnimatedDots';
 import './AboutContent.css';
 
 const AboutContent = ({ onButtonClick, handleContactClick }) => {
@@ -34,7 +35,8 @@ const AboutContent = ({ onButtonClick, handleContactClick }) => {
             <div className="About__text">
             Passionate about advancing digital healthcare technologies and leveraging Health IT and AI to drive innovation and improve healthcare outcomes.
             </div>
-            <button className="About__button" onClick={onButtonClick}>READ MORE</button>
+            {/* <button className="About__button" onClick={onButtonClick}>READ MORE</button> */}
+            <AnimatedDots onButtonClick={onButtonClick}/>
           </div>
         </div>
       </div>

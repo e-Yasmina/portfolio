@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
+import AnimatedDots from "../../Components/AnimatedDots/AnimatedDots";
 import "./Contact.css"; // Import the CSS file
 
 const Contact = () => {
@@ -18,18 +19,18 @@ const Contact = () => {
   
     //const form = e.target; // Ensure the form is captured if using a form element
   
-    const form = {
-      name: formData.name.value,
-      email: formData.email.value,
-      contact: formData.contact.value,
-      message: formData.message.value,
-    };
+    // const form = {
+    //   name: formData.name.value,
+    //   email: formData.email.value,
+    //   contact: formData.contact.value,
+    //   message: formData.message.value,
+    // };
   
     emailjs
       .send(
         "service_xzqvd9w", // Replace with your EmailJS Service ID
         "template_0j4d3he", // Replace with your EmailJS Template ID
-        form,
+        formData,
         "UPPxHPud8c1799NoX" // Replace with your EmailJS Public Key
       )
       .then(
@@ -67,7 +68,6 @@ const Contact = () => {
     // Logic to handle form submission
     console.log("Form data submitted:", formData);
     sendMessage(e);
-    alert("Your message has been sent!");
     // Clear form after sending (optional)
     setFormData({ name: "", email: "", contact: "", message: "" });
   };
@@ -128,9 +128,10 @@ const Contact = () => {
             {'<'}
             </div>
             <button className="screen-header-right" onClick={triggerAnimation}>
+              <AnimatedDots/>
+              {/* <div className="screen-header-ellipsis"></div>
               <div className="screen-header-ellipsis"></div>
-              <div className="screen-header-ellipsis"></div>
-              <div className="screen-header-ellipsis"></div>
+              <div className="screen-header-ellipsis"></div> */}
             </button>
           </div>
           <div className="screen-body">
