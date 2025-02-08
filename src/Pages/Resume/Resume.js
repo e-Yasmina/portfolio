@@ -1,13 +1,16 @@
 import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import { useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "./Resume.css"; // Import external CSS file
+import AnimatedDots from "../../Components/AnimatedDots/AnimatedDots";
 
 const Resume = () => {
   //const resumeRef = useRef();
   const resumeRef = useRef(null);
   console.log("Resume Ref:", resumeRef.current);
+  const navigate = useNavigate();
   
   const handlePrint = useReactToPrint({
     content: () => resumeRef.current,
@@ -43,7 +46,13 @@ const Resume = () => {
 
     pdf.save("My_Resume.pdf");
   };
-
+  const triggerAnimation = () => {
+    navigate("/Portfolio/menu");
+    //setIsAnimatingOut(true); // Start the exit animation
+    // setTimeout(() => {
+       
+    // }, 2000); 
+  };
   return (
     <div className="resume-container">
       <div className="resume-card">
@@ -55,7 +64,43 @@ const Resume = () => {
           <p className="resume-description">
           Software Engineer with a solid foundation in full-stack web and mobile development. Skilled in designing, developing, and deploying applications using React, Node.js, Laravel, and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within Agile teams. Proficient in French and English, with a passion for delivering reliable and scalable solutions.
           </p>
+          <div className="resume-section">
+            <h2 className="resume-section-title">Experience</h2>
+            <div className="resume-experience">
+              <h3 className="resume-experience-title">Software Engineer - Magna Worldwide</h3>
+              <p className="resume-experience-date">March 2024 - June 2024</p>
+              <p className="resume-experience-description">
+                - Developed a suite of mobile applications using Ionic, Angular, and Laravel, connecting doctors, pharmacists, patients, and delivery personnel. <br />
+                - Integrated RESTful APIs for seamless communication between frontend and backend services. <br />
+                - Focused on code maintainability and usability for cross-platform compatibility.
+              </p>
+            </div>
+
+            <div className="resume-experience">
+               <h3 className="resume-experience-title">Web Development Intern - Plaruce Engineering</h3>
+               <p className="resume-experience-date">Jun 2020 - Dec 2021</p>
+               <p className="resume-experience-description">
+                  - Designed and developed a company-focused website using WordPress, HTML, and CSS. <br />
+                  - Implemented an SEO strategy to enhance the website’s online visibility. 
+               </p>
+            </div>
+          </div>
+          <div className="resume-section">
+            <h2 className="resume-section-title">Skills</h2>
+            <ul className="resume-skills-list">
+               <li><strong>Programming Languages:</strong> JavaScript, Python, PHP, Java.</li>
+               <li><strong>Frameworks:</strong> React, Node.js, Laravel, Spring Boot.</li>
+               <li><strong>Web Technologies:</strong> HTML, CSS, Bootstrap, RESTful APIs.</li>
+               <li><strong>Database Management:</strong> SQL, NoSQL (DynamoDB), PL/SQL.</li>
+               <li><strong>Cloud Computing:</strong> Familiarity with AWS services such as Lambda, S3.</li>
+               <li><strong>DevOps:</strong> CI/CD pipelines (GitLab CI, Jenkins).</li>
+               <li><strong>Tools:</strong> Docker, Kubernetes, AWS CLI.</li>
+            </ul>
+           </div>
+
+
         </div>
+        
       </div>
       <div className="resume-buttons">
         {/* <button onClick={handlePrint} className="resume-print-button">
@@ -64,6 +109,7 @@ const Resume = () => {
         <button onClick={handleDownload} className="resume-download-button">
           Download Resume
         </button>
+        <AnimatedDots onButtonClick={triggerAnimation} />
       </div>
     </div>
   );

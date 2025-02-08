@@ -19,7 +19,7 @@ const Menu = () => {
     { name: "Education", path: "/Portfolio/notAvailablePage" },
     { name: "Blogs", path: "/Portfolio/notAvailablePage" },
     { name: "Contact", path: "/Portfolio/contact" },
-    { name: "Resume", path: "/Portfolio/notAvailablePage" },
+    { name: "Resume", path: "/Portfolio/resume" },
 
   ];
 
