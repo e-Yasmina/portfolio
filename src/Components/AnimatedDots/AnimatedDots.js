@@ -3,7 +3,9 @@ import "./AnimatedDots.css";
 
 const AnimatedDots = ({onButtonClick}) => {
   return (
-    <div className="dots-container" onClick={onButtonClick}>
+    <div className="first-dots-container">
+      <div className="dots-container" onClick={onButtonClick}>
+      </div>
     </div>
   );
 };

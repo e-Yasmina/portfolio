@@ -26,6 +26,15 @@ const Layout = () => {
     }, 2000); 
     //navigate("/Portfolio/Contact");
   };
+  
+  const handleResumeClick = () => {
+    navigate("/Portfolio/resume");
+    // setIsAnimatingOut(true); // Start the exit animation
+    // setTimeout(() => {
+       
+    // }, 2000); 
+    //navigate("/Portfolio/Contact");
+  };
 
   return (
     <motion.div 
@@ -60,7 +69,7 @@ const Layout = () => {
         animate={{ x: 0, opacity: 1 }}       // Animate to its final position
         transition={{ type: 'tween', stiffness: 30, duration: 2 }}
       >
-        <AboutContent onButtonClick={triggerAnimation} handleContactClick={handleContactClick}/>
+        <AboutContent onButtonClick={triggerAnimation} handleContactClick={handleContactClick} handleResumeClick={handleResumeClick}/>
       </motion.div>
       )}
     

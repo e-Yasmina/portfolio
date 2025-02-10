@@ -12,6 +12,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
     
   }
   
@@ -75,7 +76,7 @@
   }
   
   .resume-download-button:hover {
-    background-color: #0056b3;
+    background-color: #3e4aeb;
   }
 
   .resume-section {
@@ -125,4 +126,48 @@
     margin-bottom: 5px;
     text-align: left;
   }
+  .resume-education {
+    margin-bottom: 15px;
+  }
+  
+  .resume-degree {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+    text-align: left;
+  }
+  
+  .resume-school {
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+  }
+  .resume-back{
+    margin-top: 0%;
+    margin-right: auto; 
+    cursor: pointer;
+    color:#3e4aeb ;
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    
+  }
+
+  @media print {
+    .resume-content {
+      overflow: visible !important;
+      height: auto !important;
+    }
+  
+    .resume-container {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  
+    .resume-section {
+      page-break-before: always;
+    }
+  }
+  
   

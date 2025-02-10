@@ -1,11 +1,15 @@
-/* HTML: <div class="loader"></div> */
+.first-dots-container{
+  cursor: pointer;
+  width: 55px;
+}
+
 .dots-container {
     width: 15px;
     aspect-ratio: 1;
     border-radius: 50%;
     margin-left: 20px;
     animation: l5 1s infinite linear alternate;
-    cursor: pointer;
+    
     outline: none;
   }
    @keyframes l5 {

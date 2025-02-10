@@ -7,6 +7,7 @@ const Card = (props) => {
     <div className="card" onClick={props.onClick}>
       <div className="container">
         <img
+          className="project-image"
           src={props.image}
           alt={props.ImgT}
         />

@@ -20,32 +20,33 @@ const Resume = () => {
   const handleDownload = async () => {
     const element = resumeRef.current;
     if (!element) return;
-
+  
     const canvas = await html2canvas(element, {
-        scale: 2, // Improves quality
-      });
-
-    //const canvas = await html2canvas(element);
+      scale: 3, // Improves quality
+    });
+  
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF("p", "mm", "a4");
-
+  
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
-    const margin = 10; // Margin from edges (in mm)
-    
+    const margin = 10; // Margin from edges
+  
     const imgWidth = pageWidth - 2 * margin;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-    // Add some text styling (optional)
-    pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(20);
-    pdf.text("", pageWidth / 2, margin + 10, { align: "center" });
-
-    // Add the resume image with margins
-    pdf.addImage(imgData, "PNG", margin, margin + 15, imgWidth, imgHeight);
-
-    pdf.save("My_Resume.pdf");
+  
+    // **If content is too tall, scale it down**
+    const scaleFactor = Math.min(3, (pageHeight - 2 * margin) / imgHeight);
+    const centeredX = (pageWidth - imgWidth * scaleFactor) / 2;
+    const centeredY = (pageHeight - imgHeight * scaleFactor) / 2;
+  
+    //pdf.addImage(imgData, "PNG", margin, margin, imgWidth * scaleFactor, imgHeight * scaleFactor);
+    pdf.addImage(imgData, "PNG", centeredX, centeredY, imgWidth * scaleFactor, imgHeight * scaleFactor);
+  
+    pdf.save("Yasmina_Elbernoussi_Resume.pdf");
   };
+  
+  
   const triggerAnimation = () => {
     navigate("/Portfolio/menu");
     //setIsAnimatingOut(true); // Start the exit animation
@@ -55,6 +56,9 @@ const Resume = () => {
   };
   return (
     <div className="resume-container">
+      <div className="resume-back" onClick={() => navigate("/Portfolio/")}>
+            {'<'}
+      </div>
       <div className="resume-card">
         <div ref={resumeRef} className="resume-content">
           <h1 className="resume-title">Yasmina Elbernoussi</h1>
@@ -62,7 +66,7 @@ const Resume = () => {
           <p className="resume-contact">Email: yasminaelbernoussi@gmail.com | Phone: +212602572433</p>
           <hr className="resume-divider" />
           <p className="resume-description">
-          Software Engineer with a solid foundation in full-stack web and mobile development. Skilled in designing, developing, and deploying applications using React, Node.js, Laravel, and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within Agile teams. Proficient in French and English, with a passion for delivering reliable and scalable solutions.
+          Software Engineer with a solid foundation in <strong>full-stack web and mobile development</strong>. Skilled in designing, developing, and deploying applications using <strong>React, Node.js, Laravel,</strong> and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within <strong>Agile teams</strong>. Proficient in French and English, with a passion for delivering reliable and scalable solutions.
           </p>
           <div className="resume-section">
             <h2 className="resume-section-title">Experience</h2>
@@ -70,9 +74,9 @@ const Resume = () => {
               <h3 className="resume-experience-title">Software Engineer - Magna Worldwide</h3>
               <p className="resume-experience-date">March 2024 - June 2024</p>
               <p className="resume-experience-description">
-                - Developed a suite of mobile applications using Ionic, Angular, and Laravel, connecting doctors, pharmacists, patients, and delivery personnel. <br />
-                - Integrated RESTful APIs for seamless communication between frontend and backend services. <br />
-                - Focused on code maintainability and usability for cross-platform compatibility.
+                - Developed a suite of mobile applications using Ionic, Angular, and <strong>Laravel,</strong> connecting doctors, pharmacists, patients, and delivery personnel. <br />
+                - Integrated <strong>RESTful APIs</strong> for seamless communication between frontend and backend services. <br />
+                - Focused on code maintainability and usability for <strong>cross-platform compatibility</strong>.
               </p>
             </div>
 
@@ -96,7 +100,16 @@ const Resume = () => {
                <li><strong>DevOps:</strong> CI/CD pipelines (GitLab CI, Jenkins).</li>
                <li><strong>Tools:</strong> Docker, Kubernetes, AWS CLI.</li>
             </ul>
-           </div>
+          </div>
+          <div className="resume-section">
+            <h2 className="resume-section-title">Education</h2>
+            <div className="resume-education">
+              <h3 className="resume-degree">State Engineer Diploma in Computer Science</h3>
+              <p className="resume-experience-date">2021 - 2024</p>
+              <p className="resume-school">National School of Applied Sciences, Al-Hoceima</p>
+            </div>
+          </div>
+
 
 
         </div>

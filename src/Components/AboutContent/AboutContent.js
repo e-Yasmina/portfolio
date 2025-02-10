@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import AnimatedDots from '../AnimatedDots/AnimatedDots';
 import './AboutContent.css';
 
-const AboutContent = ({ onButtonClick, handleContactClick }) => {
+const AboutContent = ({ onButtonClick, handleContactClick, handleResumeClick }) => {
 
   return (
     <motion.div
@@ -39,6 +39,15 @@ const AboutContent = ({ onButtonClick, handleContactClick }) => {
             <AnimatedDots onButtonClick={onButtonClick}/>
           </div>
         </div>
+        <button
+          onClick={handleResumeClick}
+          className="resume-button">
+          <img
+            src={`${process.env.PUBLIC_URL}/Icons/cv.png`}
+            alt="CV"
+            className="resume-image"
+          />
+        </button>
       </div>
     </div>
     </motion.div>
