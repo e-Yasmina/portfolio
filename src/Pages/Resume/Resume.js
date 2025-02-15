@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useReactToPrint } from "react-to-print";
 import { useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
@@ -10,6 +11,7 @@ const Resume = () => {
   //const resumeRef = useRef();
   const resumeRef = useRef(null);
   console.log("Resume Ref:", resumeRef.current);
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const navigate = useNavigate();
   
   const handlePrint = useReactToPrint({
@@ -46,17 +48,48 @@ const Resume = () => {
     pdf.save("Yasmina_Elbernoussi_Resume.pdf");
   };
   
-  
-  const triggerAnimation = () => {
-    navigate("/Portfolio/menu");
-    //setIsAnimatingOut(true); // Start the exit animation
-    // setTimeout(() => {
-       
-    // }, 2000); 
+  const triggerAnimation = () => { 
+    setIsAnimatingOut(true); // Start the exit animation
+    setTimeout(() => {
+      navigate("/Portfolio/menu");
+    }, 2000); 
+  };
+  const triggerAnimation1 = () => { 
+    setIsAnimatingOut(true); // Start the exit animation
+    setTimeout(() => {
+      navigate("/Portfolio/");
+    }, 2000); 
   };
   return (
+    
+    <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.3, // Delay between child animations
+              },
+            },
+          }}
+    >
+    <motion.div
+        initial={{ x: '100vw', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
+        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
+    >
+    <AnimatePresence>
+    {!isAnimatingOut && (
+        <motion.div
+        exit={{ x: '-100vw', opacity: 0 }} // Start off-screen to the right
+        initial={{ x: '100vw', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
+        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
+        >
     <div className="resume-container">
-      <div className="resume-back" onClick={() => navigate("/Portfolio/")}>
+      <div className="resume-back" onClick={triggerAnimation1}>
             {'<'}
       </div>
       <div className="resume-card">
@@ -109,11 +142,7 @@ const Resume = () => {
               <p className="resume-school">National School of Applied Sciences, Al-Hoceima</p>
             </div>
           </div>
-
-
-
-        </div>
-        
+        </div>      
       </div>
       <div className="resume-buttons">
         {/* <button onClick={handlePrint} className="resume-print-button">
@@ -125,6 +154,39 @@ const Resume = () => {
         <AnimatedDots onButtonClick={triggerAnimation} />
       </div>
     </div>
+    </motion.div>
+    )}
+    </AnimatePresence>
+    </motion.div>
+    <motion.div
+          initial={{ x: '-100vw', opacity: 0 }} // Start off-screen to the left
+          animate={{ x: 0, opacity: 1 }}       // Animate to its final position
+          transition={{ type: 'tween', stiffness: 30, duration: 2 }}
+          style={{
+            zIndex: 1000, //on top of other content
+          }}
+    >
+    <AnimatePresence>
+    {!isAnimatingOut && (
+        <motion.div
+        exit={{ x: '100vw', opacity: 0 }} // Start off-screen to the left
+        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
+        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
+      >
+      <div className="resume-img-container">
+      <img 
+        src={`${process.env.PUBLIC_URL}/Imgs/image.png`}
+        alt="My Image"
+        className="resume-img"
+      />
+      </div>
+      </motion.div>
+      )}
+    </AnimatePresence>
+    </motion.div>
+    
+    </motion.div>
+    
   );
 };
 

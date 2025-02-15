@@ -109,7 +109,7 @@ const Contact = () => {
     <motion.div
         initial={{ x: '100vw', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 30, duration: 2 }}
+        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
     >
     <AnimatePresence>
     {!isAnimatingOut && (
@@ -117,7 +117,7 @@ const Contact = () => {
         exit={{ x: '-100vw', opacity: 0 }} // Start off-screen to the right
         initial={{ x: '100vw', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 30, duration: 2 }}
+        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
         >
         
     <div className="background">
