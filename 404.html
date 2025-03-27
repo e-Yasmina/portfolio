@@ -1,5 +1,8 @@
 <script>
-    var path = window.location.pathname;
-    window.location.replace("/Portfolio/#" + path);
-</script>
+    // Redirect all non-existing routes to index.html while preserving the path
+    var pathname = window.location.pathname;
+    if (pathname.startsWith("/Portfolio")) {
+      window.location.replace("/Portfolio/index.html?redirect=" + pathname);
+    }
+  </script>
   
