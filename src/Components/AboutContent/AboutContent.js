@@ -43,7 +43,7 @@ const AboutContent = ({ onButtonClick, handleContactClick, handleResumeClick }) 
           onClick={handleResumeClick}
           className="resume-button">
           <img
-            src={`${process.env.PUBLIC_URL}/Icons/cv.png`}
+            src={`${process.env.PUBLIC_URL}/Icons/cv (1).png`}
             alt="CV"
             className="resume-image"
           />

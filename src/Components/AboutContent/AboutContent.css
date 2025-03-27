@@ -178,9 +178,9 @@
 
 .resume-button {
   position: absolute;
-  bottom: 0.5rem; 
-  right: 0.5rem; 
-  padding: 0.5rem; 
+  bottom: 0px; 
+  right: 0px; 
+  padding: 0.4rem; 
   background: transparent; 
   border: none; 
   cursor: pointer; 
@@ -190,6 +190,4 @@
   width: 4rem; 
   height: 4rem;
   object-fit: cover;
-  /* border-radius: 50%; */
-  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  */
 }

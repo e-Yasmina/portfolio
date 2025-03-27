@@ -160,12 +160,12 @@
     /* transition: transform 0.5s ease-in-out; */
   }
   .resume-img{
-    transform: rotateY(180deg) translate(40%,-345%);
-    width: 25%;
+    transform: rotateY(180deg) translate(60%,-290%);
+    width: 30%;
     height: 30%;
   }
   .resume-img:hover {
-    transform: rotateY(0deg) translate(-40%,-345%);
+    transform: rotateY(0deg) translate(-70%,-290%);
   }
   @media print {
     .resume-content {
