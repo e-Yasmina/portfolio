@@ -1,7 +1,6 @@
 import './App.css';
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate  } from "react-router-dom";
 import Layout from './Pages/About/About';
 import Menu from './Pages/Menu/Menu';
 import NotAvailablePage from './Pages/Placeholder/Placeholder';
@@ -14,8 +13,21 @@ import Blog from './Pages/Blog/Blog';
 
 
 function App() {
+  function RedirectHandler() {
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get("redirect");
+      if (redirectPath) {
+        navigate(redirectPath.replace("/Portfolio", ""));
+      }
+    }, []);
+  
+    return null;
+  }
   return (
-    <Router>
+    <Router basename="/Portfolio">
       <Helmet>
         <title>Yasmina Elbernoussi</title>
         <link rel="canonical" href="http://mysite.com/example" />
@@ -23,16 +35,18 @@ function App() {
       
       <nav>
           {/* <a href="Portfolio/">About</a> | <a href="Portfolio/Menu">Menu</a> | <a href="Portfolio/contact">Contact</a> | <a href="Portfolio/projects">Projects</a> | <a href="Portfolio/resume">Resume</a> */}
-          <a href="#/Portfolio/blog">Blog</a>
+          {/* <a href="/Portfolio/blog">Blog</a> */}
       </nav>
+      
+      <RedirectHandler /> {/* Handle GitHub Pages redirects */}
       <Routes>
-        <Route path="Portfolio" element={<Layout />} />
-        <Route path="Portfolio/menu" element={<Menu/>} />
-        <Route path="Portfolio/notAvailablePage" element={<NotAvailablePage/>} />
-        <Route path="Portfolio/contact" element={<Contact/>} />
-        <Route path="Portfolio/projects" element={<Projects/>} />
-        <Route path="Portfolio/resume" element={<Resume/>} />
-        <Route path="Portfolio/blog" element={<Blog/>} />
+        <Route path="/" element={<Layout />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/notAvailablePage" element={<NotAvailablePage />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </Router>
   );

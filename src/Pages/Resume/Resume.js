@@ -51,13 +51,13 @@ const Resume = () => {
   const triggerAnimation = () => { 
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/menu");
+      navigate("/menu");
     }, 2000); 
   };
   const triggerAnimation1 = () => { 
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/");
+      navigate(-1); 
     }, 2000); 
   };
   return (
@@ -175,8 +175,8 @@ const Resume = () => {
       >
       <div className="resume-img-container">
       <img 
-        src={`${process.env.PUBLIC_URL}/Imgs/image.png`}
-        alt="My Image"
+        src={`${process.env.PUBLIC_URL}/Imgs/resume_image.png`}
+        alt="Resume"
         className="resume-img"
       />
       </div>

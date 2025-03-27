@@ -15,20 +15,20 @@ const Layout = () => {
   const triggerAnimation = () => {
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/menu"); 
+      navigate("/menu"); 
     }, 2000); 
   };
 
   const handleContactClick = () => {
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/contact"); 
+      navigate("/contact"); 
     }, 2000); 
     //navigate("/Portfolio/Contact");
   };
   
   const handleResumeClick = () => {
-    navigate("/Portfolio/resume");
+    navigate("/resume");
     // setIsAnimatingOut(true); // Start the exit animation
     // setTimeout(() => {
        

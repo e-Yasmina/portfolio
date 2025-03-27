@@ -13,13 +13,13 @@ const Menu = () => {
     // { name: "Blogs", path: "/Portfolio/blogs" },
     // { name: "Contact", path: "/Portfolio/contact" },
     // { name: "Resume", path: "/Portfolio/resume" },
-    { name: "Home", path: "/Portfolio/" },
-    { name: "Projects", path: "/Portfolio/notAvailablePage" },
-    { name: "Skills", path: "/Portfolio/notAvailablePage" },
-    { name: "Education", path: "/Portfolio/notAvailablePage" },
-    { name: "Blogs", path: "/Portfolio/notAvailablePage" },
-    { name: "Contact", path: "/Portfolio/contact" },
-    { name: "Resume", path: "/Portfolio/resume" },
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/notAvailablePage" },
+    { name: "Skills", path: "/notAvailablePage" },
+    { name: "Education", path: "/notAvailablePage" },
+    { name: "Blogs", path: "/notAvailablePage" },
+    { name: "Contact", path: "/contact" },
+    { name: "Resume", path: "/resume" },
 
   ];
 

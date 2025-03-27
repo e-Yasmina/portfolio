@@ -82,7 +82,7 @@ const Contact = () => {
   const triggerAnimation = () => {
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/menu"); 
+      navigate("/menu"); 
     }, 2000); 
   };
   const triggerAnimation1 = () => {
