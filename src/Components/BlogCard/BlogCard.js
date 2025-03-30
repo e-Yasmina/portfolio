@@ -1,7 +1,7 @@
 import React from "react";
 import "./BlogCard.css"; // Assuming you save the styles separately in BlogPost.css
 
-const BlogPost = ({ image, date, title, description, link }) => {
+const BlogPost = ({ image, date, title, description, link ,handleReadMore }) => {
   return (
     <div class="blog_post">
       <div class="img_pod">
@@ -11,7 +11,7 @@ const BlogPost = ({ image, date, title, description, link }) => {
        <h3>{date}</h3>
        <h1>{title}</h1>
        <p>{description}</p>
-       <a class="btn_primary" href={link} target="_blank">Read More</a>
+       <a class="btn_primary" href={link} target="_blank" onClick={handleReadMore }>Read More</a>
       </div>
     </div>
   );

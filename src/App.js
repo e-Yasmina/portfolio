@@ -9,6 +9,7 @@ import Contact from './Pages/Contact/Contact';
 import Projects from './Pages/Projects/Projects';
 import Resume from './Pages/Resume/Resume';
 import Blog from './Pages/Blog/Blog';
+import Skills from './Pages/Skills/Skills';
 //import Header from './Components/Header/Header';
 
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/skills" element={<Skills />} />
       </Routes>
     </Router>
   );

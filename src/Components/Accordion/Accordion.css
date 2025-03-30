@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+.main-title {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 2rem;
+  color: #4B5F80;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* deco lines */
+  &:before, &:after {
+    content: '';
+    display: block;
+    margin: 0rem 0.5rem;
+    flex: 1;
+    border-bottom: 1px solid #4B5F80;
+  }
+}
+.wrapper {
+  width: 60%;; 
+  margin: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  @media (max-width: 768px) {
+    width: auto;
+    padding: 0 0.3rem;
+  }
+}
+.accordion-item{
+  width: 100%;
+  margin: 5px;
+}
+input[type='radio'] {
+  display: none;
+  &:checked + .item {
+    .title {
+      color: #fff;
+      /* border-color: #6A3DEB; */
+      border-color: #4B5F80;
+      background-color: #4B5F80;
+      &:after {
+        transform: rotate(180deg);  
+      }
+    }
+    .content {
+      /* for animation! can use padding or margin here */
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+      /* show content */
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.3s, opacity 0.7s; 
+      /* fade-in slow */
+    }
+  }
+}
+.item {
+  display: block;
+  margin-bottom: 0.1rem;
+}
+.title {
+  padding: 0.5rem 0.5rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(235, 235, 235, .35);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: 12px;
+  background: rgba(187, 205, 189, .25);
+  transition: all .25s ease;
+
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+    /* aligned arrow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   /* arrow icon */
+  &:after {
+    content: '\25bc';
+    display: inline-block;
+    font-size: 12px;
+  }
+}
+.content {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 0.3rem;
+  line-height: 1.6;
+  color: #4B5F80;
+  border: 1px solid;
+  border-width: 0 1px;
+  transition: all 0.2s;  /*fade-out fast */
+}
