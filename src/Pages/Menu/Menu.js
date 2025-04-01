@@ -9,8 +9,8 @@ const Menu = () => {
     { name: "Home", path: "/" },
     { name: "Projects", path: "/notAvailablePage" },
     { name: "Skills", path: "/skills" },
-    { name: "Education", path: "/notAvailablePage" },
-    { name: "Blogs", path: "/notAvailablePage" },
+    { name: "Experience", path: "/exeperience&education" },
+    { name: "Blogs", path: "/blogs" },
     { name: "Contact", path: "/contact" },
     { name: "Resume", path: "/resume" },
 

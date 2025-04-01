@@ -18,5 +18,8 @@
 .blogs{
   max-height: calc(100vh - 40px); 
   overflow-y: auto;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.article-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, Edge */
 }

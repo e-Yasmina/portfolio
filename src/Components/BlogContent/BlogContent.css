@@ -13,6 +13,9 @@
     border-radius: 5px;
     margin-bottom: 20px;
   }
+  .blog-section{
+    margin-bottom:40px ;
+  }
   
   .back-button:hover {
     background-color: #0056b3;
@@ -24,7 +27,7 @@
   
   .blog-content-image {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     border-radius: 10px;
     margin-bottom: 20px;
   }
@@ -33,8 +36,45 @@
     font-size: 2rem;
     margin-bottom: 20px;
   }
+  .blog-section-subtitle {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .blog-section-text{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
   
   .blog-content-body {
     font-size: 1rem;
     line-height: 1.6;
   }
+  
+  .blog-section-divider {
+   display: flex;
+   flex-direction: row;
+   align-items: top;
+   justify-content: center;
+   margin: 20px 0;
+   gap: 20px;
+  }
+
+  .blog-section-divider img {
+   flex:1;
+   width: 50%;
+   height: 50%;
+  }
+
+  .blog-section-list-item {
+    margin-left: 40px;
+  }
+
+  .row-left {
+    flex-direction: row; /* Image on the left */
+  }
+  
+  .row-right {
+    flex-direction: row-reverse; /* Image on the right */
+  }
+  
