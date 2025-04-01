@@ -8,7 +8,9 @@ const Experience = () => {
   
 
   return (
-    <TimeLine/>
+    <div className="experience-container">
+     <TimeLine/>
+    </div>
   );
 };
 

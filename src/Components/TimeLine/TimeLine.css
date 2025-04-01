@@ -11,9 +11,17 @@
 
 
 main {
+  counter-reset: section 6; /* Set the starting value of the counter (total number of items) */
   min-width: 500px;
-  max-width: 00px;
+  max-width: 50%;
   margin: auto;
+  padding: 20px;
+  max-height: calc(100vh - 40px); 
+  overflow-y: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.article-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
 }
 
 p {
@@ -25,7 +33,7 @@ p {
   border-width: 3px;
   margin: 0;
   padding: 40px;
-  counter-increment: section;
+  counter-increment: section -1;
   position: relative;
   color: var(--black);
   
