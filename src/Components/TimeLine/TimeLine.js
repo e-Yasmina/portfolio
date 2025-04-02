@@ -1,6 +1,9 @@
 import "./TimeLine.css";
+import { useNavigate } from "react-router-dom";
 
 const TimeLine = () => {
+  const navigate = useNavigate();
+
 
     const timelineTexts = [
         "<h3>Final Year Project (PFE) at Magna Worldwide:</h3><br>Developed and deployed mobile applications to connect healthcare entities, improving medical service accessibility. Integrated secure and scalable backend solutions.",
@@ -12,8 +15,11 @@ const TimeLine = () => {
     
   return (
     <main>
+      <button className="back-button" onClick={() => navigate(-1)}>
+            &larr; Back
+          </button>
       {timelineTexts.map((text, index) => (
-        <p key={index} dangerouslySetInnerHTML={{ __html: text }}></p>
+        <p className="timePoint" dangerouslySetInnerHTML={{ __html: text }}></p>
       ))}
     </main>
   );

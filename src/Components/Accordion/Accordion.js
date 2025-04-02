@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./Accordion.css"; // Add styles for Accordion
 import SkillsContent from "../SkillsContent/SkillsContent";
+import { useNavigate } from "react-router-dom";
+
 const Accordion = () => {
+  const navigate = useNavigate();
   const items = [
     "🖥️ Frontend Development",
     "⚙️ Backend Development",
@@ -87,6 +90,9 @@ const Accordion = () => {
 
   return (
     <div className="wrapper">
+      <button className="back-button" onClick={() => navigate(-1)}>
+            &larr; Back
+      </button>
       <h2 className="main-title">My Skills & Expertise:</h2>
       {items.map((val, key) => (
         <div key={key} className="accordion-item">

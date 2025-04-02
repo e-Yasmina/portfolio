@@ -16,7 +16,6 @@ const Contact = () => {
   });
   const sendMessage = (e) => {
     e.preventDefault();
-  
     //const form = e.target; // Ensure the form is captured if using a form element
   
     // const form = {

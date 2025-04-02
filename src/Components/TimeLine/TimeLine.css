@@ -24,7 +24,7 @@ main {
     display: none; /* Hide scrollbar for Chrome, Safari, Edge */
 }
 
-p {
+.timePoint {
   font-size: 1em;
   line-height: 1.75em;
   border-top: 3px solid;
@@ -53,7 +53,7 @@ p {
   }
 }
 
-p:nth-child(odd) {
+.timePoint:nth-child(odd) {
   border-right: 3px solid;
   padding-left: 0;
   
@@ -63,7 +63,7 @@ p:nth-child(odd) {
   }
 }
 
-p:nth-child(even) {
+.timePoint:nth-child(even) {
   border-left: 3px solid;
   padding-right: 0;
   
@@ -73,12 +73,12 @@ p:nth-child(even) {
   }
 }
 
-p:first-child {
+.timePoint:first-child {
   border-top: 0;
   border-top-right-radius:0;
   border-top-left-radius:0;
 }
-p:last-child {
+.timePoint:last-child {
   border-bottom-right-radius:0;
   border-bottom-left-radius:0;
 }

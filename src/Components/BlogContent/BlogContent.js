@@ -1,15 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./BlogContent.css";
 
 const BlogContent = ({ title, mainImage, sections }) => {
-  const navigate = useNavigate();
 
   return (
     <div className="blog-content-container">
-      <button className="back-button" onClick={() => navigate(-1)}>
-        &larr; Back
-      </button>
+      
       <div className="blog-content">
         {/* Main Image and Title */}
         <img src={mainImage} alt={title} className="blog-content-image" />
@@ -31,39 +27,44 @@ const BlogContent = ({ title, mainImage, sections }) => {
                 className="blog-section-image"
               />
             )}
-            {section.text && (
-                <div className="blog-section-text">
-                  {Array.isArray(section.text) ? (
-                    <ul className="blog-section-list">
-                      {section.listText && (
+            <div className="blog-section-text">
+            {section.textBlocks && section.textBlocks.map((textBlock, blockIndex) => (
+             <div key={blockIndex}>
+                {Array.isArray(textBlock.text) ? (
+                  <ul className="blog-section-list">
+                    {/* Render listText before the list */}
+                      {textBlock.listText && (
                         <p
                          className="blog-section-paragraph"
-                         dangerouslySetInnerHTML={{ __html: section.listText }}
-                        ></p>
-  )}
-                      {section.text.map((item, i) => (
-                        <li key={i} className="blog-section-list-item">
-                          {item}
-                        </li>
-                      ))}
-                      {section.listAfterText && (
-                        <p
-                          className="blog-section-paragraph"
-                          dangerouslySetInnerHTML={{ __html: section.listAfterText }}
+                         dangerouslySetInnerHTML={{ __html: textBlock.listText }}
                         ></p>
                       )}
-                    </ul>
-                  ) : (
-                    // Handle line breaks in text
-                    section.text && (
-                      <p className="blog-section-paragraph"  
-                        dangerouslySetInnerHTML={{ __html: section.listAfterText }}
-                        >
-                      </p>
-                    )
+
+                    {/* Render each item in the text array */}
+                    {textBlock.text.map((item, i) => (
+                    <li key={i} className="blog-section-list-item">
+                     {item}
+                    </li>
+                  ))}
+
+                  {/* Render listAfterText after the list */}
+                  {textBlock.listAfterText && (
+                    <p
+                      className="blog-section-paragraph"
+                      dangerouslySetInnerHTML={{ __html: textBlock.listAfterText }}
+                    ></p>
                   )}
-                </div>
-              )}
+               </ul>
+              ) : (
+              // Render textBlock.text directly if it's a string
+            <p
+            className="blog-section-paragraph"
+            dangerouslySetInnerHTML={{ __html: textBlock.text }}
+            ></p>
+          )}
+          </div>
+      ))}
+       </div>
             </div>
           </div>
         ))}

@@ -6,7 +6,7 @@ import "./Experience.css"; // Assuming your CSS animations are here.
 
 const Experience = () => {
   
-
+  
   return (
     <div className="experience-container">
      <TimeLine/>
