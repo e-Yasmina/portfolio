@@ -16,8 +16,8 @@ const TimeLine = () => {
   return (
     <main>
       <button className="back-button" onClick={() => navigate(-1)}>
-            &larr; Back
-          </button>
+          &larr; Back
+      </button>
       {timelineTexts.map((text, index) => (
         <p className="timePoint" dangerouslySetInnerHTML={{ __html: text }}></p>
       ))}

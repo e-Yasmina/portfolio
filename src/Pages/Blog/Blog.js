@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Blog.css"; 
 import BlogPost from "../../Components/BlogCard/BlogCard";
 import BlogContent from "../../Components/BlogContent/BlogContent";
@@ -8,21 +9,36 @@ const BlogPage =() =>{
   const [showMore, setShowMore] = useState(false);
   const [showLess, setShowLess] = useState(true);
   const [blog, setBlog] = useState(0);
+  const navigate = useNavigate();
   
   const handleReadMore = (blogId) => {
     setBlog(blogId);
     setShowLess(false);
     setShowMore(true);
+    
   };
   const handleBackB = () => {
-    setShowLess(true);
-    setShowMore(false);
-  }
+    if (showLess){
+      // Navigate back in history if there is a previous page
+    if (window.history.length > 1) {
+      navigate(-1); // Go back to the previous page
+    } else {
+      navigate("/menu"); // Fallback to a specific route if no history exists
+    }
+    }
+    else{
+      setShowLess(true);
+      setShowMore(false);
+    }
+  };
 
     return (
         <div className="container">
-        
+          <button className="back-button" onClick={handleBackB}>
+              &larr; Back
+          </button>
         {showLess && <div className="blogs-card">
+          
           <BlogPost
               image={`${process.env.PUBLIC_URL}/BlogImgs/image1.png`}
               date="28 Mars 2025"
@@ -39,9 +55,9 @@ const BlogPage =() =>{
           />
         </div>}
         {showMore && blog===1 && <div className="blogs">
-          <button className="back-button" onClick={handleBackB}>
+          {/* <button className="back-button" onClick={handleBackB}>
             &larr; Back
-          </button>
+          </button> */}
           <BlogContent
               mainImage={`${process.env.PUBLIC_URL}/BlogImgs/junior-senior-symbol.png`}
               title="Bridging the Gap: How Juniors Can Think and Work Like Senior Developers"
@@ -84,9 +100,7 @@ const BlogPage =() =>{
                     "Juniors write code without explaining their thought process.",
                     "Seniors document their work properly, making it easier for teams to collaborate.",
                  ]}
-                ],
-  
-                },
+                ],},
                 {
                   subtitle: "Why Mastering These Skills Matters",
                   textBlocks: [{text:"Many junior developers focus too much on coding languages and frameworks but neglect the skills that make them valuable in real-world projects. Companies expect developers to read existing codebases, debug issues, optimize performance, and contribute beyond just writing code.<br>If you want to stand out, you need to think beyond syntax and libraries—you need to learn how to handle real-world software development.",
@@ -167,5 +181,5 @@ const BlogPage =() =>{
         </div>} */}
         </div>
         );
-      };
+};
 export default BlogPage;

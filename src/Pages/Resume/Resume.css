@@ -4,7 +4,7 @@
     margin: 5%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     max-height: 90vh;
     background-color: transparent;
@@ -73,7 +73,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
+    /* transition: background 0.3s; */
   }
   
   .resume-download-button:hover {
@@ -160,12 +160,12 @@
     /* transition: transform 0.5s ease-in-out; */
   }
   .resume-img{
-    transform: rotateY(180deg) translate(60%,-290%);
+    transform: rotateY(180deg) translate(60%,-270%);
     width: 30%;
     height: 30%;
   }
   .resume-img:hover {
-    transform: rotateY(0deg) translate(-70%,-290%);
+    transform: rotateY(0deg) translate(-70%,-270%);
   }
   @media print {
     .resume-content {

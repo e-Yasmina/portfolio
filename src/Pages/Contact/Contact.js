@@ -120,12 +120,15 @@ const Contact = () => {
         >
         
     <div className="background">
-      <div className="container">
+      <div className="contact_container">
         <div className="screen">
           <div className="screen-header">
-            <div className="screen-header-left" onClick={triggerAnimation1}>
+            {/* <div className="screen-header-left" onClick={triggerAnimation1}>
             {'<'}
-            </div>
+            </div> */}
+            <button className="screen-header-left" onClick={triggerAnimation1}>
+              &larr; Back
+            </button>
             <button className="screen-header-right" onClick={triggerAnimation}>
               <AnimatedDots/>
               {/* <div className="screen-header-ellipsis"></div>

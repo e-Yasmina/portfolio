@@ -89,9 +89,12 @@ const Resume = () => {
         transition={{ type: 'tween', stiffness: 20, duration: 2 }}
         >
     <div className="resume-container">
-      <div className="resume-back" onClick={triggerAnimation1}>
+      {/* <div className="resume-back" onClick={triggerAnimation1}>
             {'<'}
-      </div>
+      </div> */}
+      <button className="back-button" onClick={triggerAnimation1}>
+            &larr; Back
+      </button>
       <div className="resume-card">
         <div ref={resumeRef} className="resume-content">
           <h1 className="resume-title">Yasmina Elbernoussi</h1>

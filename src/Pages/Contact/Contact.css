@@ -2,6 +2,7 @@
 .background {
     display: flex;
     justify-self: center;
+    align-self: center;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -9,7 +10,7 @@
     width: 100vw;
 }
   
-.container {
+.contact_container{
     flex: 0 1 900px;
     margin: auto;
     padding: 10px;
@@ -20,6 +21,7 @@
     position: relative;
     background: #534959;
     border-radius: 15px;
+    margin: auto;
   }
   
   .screen:after {
@@ -45,13 +47,20 @@
   }
   
   .screen-header-left {
-    margin-right: auto; 
+    /* margin-right: auto; 
     cursor: pointer;
     color:#ffbfb5 ;
     outline: none;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 20px; */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: auto; 
   }
 
 

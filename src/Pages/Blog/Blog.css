@@ -1,9 +1,11 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
   min-height: 100vh;
   font-size: 10px;
+  margin-left: 3.5rem;
 }
 
 .blogs-card{
@@ -11,8 +13,8 @@
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  margin-left: 3.5rem;
   padding: 4rem;
+  margin-top: 2rem;
 }
 
 .blogs{
