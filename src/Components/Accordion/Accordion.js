@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./Accordion.css"; // Add styles for Accordion
 import SkillsContent from "../SkillsContent/SkillsContent";
-import { useNavigate } from "react-router-dom";
+
 
 const Accordion = () => {
   const navigate = useNavigate();
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const items = [
     "🖥️ Frontend Development",
     "⚙️ Backend Development",
@@ -88,13 +91,69 @@ const Accordion = () => {
   const [selected, setSelected] = useState(null);
   // const [showMore, setShowMore] = useState(false);
 
+  const triggerAnimation = () => {
+    setIsAnimatingOut(true); // Start the exit animation
+    setTimeout(() => {
+        navigate(-1); 
+    }, 2000); 
+  };
   return (
+    <motion.div 
+      className="motion_div"
+      initial="hidden"
+      animate="visible"
+      variants={{
+      hidden: { opacity: 0 },
+      visible: {
+      opacity: 1,
+      transition: {
+      staggerChildren: 0.3, // Delay between child animations
+      },
+      },
+      }}
+    >
     <div className="wrapper">
-      <button className="back-button" onClick={() => navigate(-1)}>
+      <button className="back-button" onClick={triggerAnimation}>
             &larr; Back
       </button>
-      <h2 className="main-title">My Skills & Expertise:</h2>
+      <h2 className="main-title">
+        {Array.from("My Skills & Expertise:").map((letter, index) => (
+          <motion.span
+            style={{ fontFamily: "'Abril Fatface', cursive" }}
+            key={index}
+            variants={{
+              hidden: { opacity: 0, x: -10, y: 10 }, // Start off-screen to the left
+              visible: { opacity: 1, x: 0,y: 0 }, // Animate into position
+              exit: { opacity: 0, x: 10, y: -10  }, // Exit off-screen to the right
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={{
+            duration: 0.1, // Duration for each letter
+            delay: index * 0.10, // Delay based on the letter's position
+          }}
+          >
+          {letter === " " ? "\u00A0" : letter} {/* Handle spaces */}
+         </motion.span>
+         ))}
+      </h2>
       {items.map((val, key) => (
+        <motion.div
+          //initial={{ x: '100vw', opacity: 0 }}
+          initial={{ x: key % 2 === 0 ? '-100vw' : '100vw', opacity: 0 }} // Alternate sides
+          animate={{ x: 0, opacity: 1 }}       // Animate to its final position
+          transition={{ type: 'tween', stiffness: 20, duration: 2 }}
+        >
+        <AnimatePresence>
+        {!isAnimatingOut && (
+          <motion.div
+          exit={{ x: key % 2 === 0 ? '100vw' : '-100vw', opacity: 0 }} // Start off-screen to the right
+          //initial={{ x: key % 2 === 0 ? '100vw' : '-100vw', opacity: 0 }} // Alternate sides
+          animate={{ x: 0, opacity: 1 }}       // Animate to its final position
+          transition={{ type: 'tween', stiffness: 20, duration: 2 }}
+          > 
+        
         <div key={key} className="accordion-item">
           <input
             type="radio"
@@ -109,7 +168,7 @@ const Accordion = () => {
             htmlFor={`radio${key}`}
             className="item"
           >
-            <div className="title">{val}</div>
+          <div className="title">{val}</div>
           </label>
           {selected === key &&  (
             <div className="content">
@@ -119,8 +178,13 @@ const Accordion = () => {
             </div>
           )}
         </div>
+        </motion.div>
+        )}
+        </AnimatePresence>
+        </motion.div>
       ))}
     </div>
+    </motion.div>
   );
 };
 

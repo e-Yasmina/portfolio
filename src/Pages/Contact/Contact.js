@@ -15,15 +15,7 @@ const Contact = () => {
     message: "",
   });
   const sendMessage = (e) => {
-    e.preventDefault();
-    //const form = e.target; // Ensure the form is captured if using a form element
-  
-    // const form = {
-    //   name: formData.name.value,
-    //   email: formData.email.value,
-    //   contact: formData.contact.value,
-    //   message: formData.message.value,
-    // };
+    e.preventDefault(); // Prevent default form submission
   
     emailjs
       .send(
