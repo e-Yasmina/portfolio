@@ -6,6 +6,8 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "./Resume.css"; // Import external CSS file
 import AnimatedDots from "../../Components/AnimatedDots/AnimatedDots";
+import { slideInFromLeft, slideInFromRight, pageAnim} from "../../utils/animationVariants";
+
 
 const Resume = () => {
   //const resumeRef = useRef();
@@ -62,32 +64,11 @@ const Resume = () => {
   };
   return (
     
-    <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.3, // Delay between child animations
-              },
-            },
-          }}
-    >
-    <motion.div
-        initial={{ x: '100vw', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-    >
+    <motion.div {...pageAnim} >
+    <motion.div {...slideInFromLeft}>
     <AnimatePresence>
     {!isAnimatingOut && (
-        <motion.div
-        exit={{ x: '-100vw', opacity: 0 }} // Start off-screen to the right
-        initial={{ x: '100vw', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-        >
+        <motion.div {...slideInFromLeft}>
     <div className="resume-container">
       {/* <div className="resume-back" onClick={triggerAnimation1}>
             {'<'}
@@ -161,20 +142,15 @@ const Resume = () => {
     )}
     </AnimatePresence>
     </motion.div>
-    <motion.div
-          initial={{ x: '-100vw', opacity: 0 }} // Start off-screen to the left
-          animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-          transition={{ type: 'tween', stiffness: 30, duration: 2 }}
+
+    //Image 
+    <motion.div {...slideInFromRight}>
+    <AnimatePresence>
+    {!isAnimatingOut && (
+      <motion.div {...slideInFromLeft}
           style={{
             zIndex: 1000, //on top of other content
           }}
-    >
-    <AnimatePresence>
-    {!isAnimatingOut && (
-        <motion.div
-        exit={{ x: '100vw', opacity: 0 }} // Start off-screen to the left
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
       >
       <div className="resume-img-container">
       <img 
@@ -184,11 +160,12 @@ const Resume = () => {
       />
       </div>
       </motion.div>
+      
       )}
     </AnimatePresence>
     </motion.div>
-    
     </motion.div>
+   
     
   );
 };
