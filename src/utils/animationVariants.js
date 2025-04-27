@@ -16,14 +16,15 @@ const pageVariants = {
   };
   
   export const slideInFromRight = {
+    initial: { x: '100vw', opacity: 0 },
     exit: { x: '100vw', opacity: 0 }, // Start off-screen to the right
     animate: { x: 0, opacity: 1 },   // Animate to its final position
     transition: { type: 'tween', stiffness: 20, duration: 2 },
   };
   
   export const slideInFromLeft = {
+    initial: { x: '-100vw', opacity: 0 },
     exit: { x: '-100vw', opacity: 0 }, // Start off-screen to the left
-    // initial:{ x: '100vw', opacity: 0 },
     animate: { x: 0, opacity: 1 },    // Animate to its final position
     transition: { type: 'tween', stiffness: 30, duration: 2 },
   };
@@ -73,4 +74,13 @@ const pageVariants = {
       },
       exit: { opacity: 0 },
     }},
+  });
+
+  export const menuAnim= ({
+    initial:{ scale: 0, opacity: 0}, // Start small, invisible, and no rotation
+    animate:{ scale: 1, opacity: 1}, // Grow to full size, visible, and flip
+    transition:{
+          duration: 2, // Animation duration
+          ease: "easeInOut", // Smooth easing for the flipping effect
+    },
   });

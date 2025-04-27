@@ -1,10 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence  } from "framer-motion";
+import { menuAnim, alternateSlideIn} from "../../utils/animationVariants";
 import "./Menu.css"; // Assuming your CSS animations are here.
 
 const Menu = () => {
+  const navigate = useNavigate();
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const items = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/notAvailablePage" },
@@ -16,26 +20,45 @@ const Menu = () => {
 
   ];
 
+  const handleNavigation = (path) => {
+    setIsAnimatingOut(true); // Start the exit animation
+    setTimeout(() => {
+      navigate(path); // Navigate to the new page after the animation
+    }, 1000); // Adjust the timeout to match your animation duration
+  };
+
   return (
-    <motion.div
-    initial={{ scale: 0, opacity: 0, rotateX: 0 }} // Start small, invisible, and no rotation
-    animate={{ scale: 1, opacity: 1, rotateX: 1440}} // Grow to full size, visible, and flip
-        transition={{
-          duration: 2, // Animation duration
-          ease: "easeInOut", // Smooth easing for the flipping effect
-    }}>
+    <motion.div {...menuAnim} >
+      
     <ul className="menu">
       {items.map((item, index) => (
+        <motion.div key={index} {...alternateSlideIn(index)}>
+        <AnimatePresence>
+        {!isAnimatingOut && (
+        <motion.div {...alternateSlideIn(index)}>
         <li key={index} className="menu-item">
-          <Link
+          {/* <Link
             to={item.path}
             className="menu-link"
             data-text={item.name}
-          >
+          > 
             {item.name}
-          </Link>
+            </Link>*/}
+          <button
+            className="menu-link"
+            data-text={item.name}
+            onClick={() => handleNavigation(item.path)} // Trigger animation and navigation
+          >
+              {item.name}
+          </button>
+          
         </li>
+        </motion.div>
+        )}
+        </AnimatePresence>
+        </motion.div>
       ))}
+      
     </ul>
     </motion.div>
   );

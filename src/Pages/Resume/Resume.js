@@ -68,7 +68,7 @@ const Resume = () => {
     <motion.div {...slideInFromLeft}>
     <AnimatePresence>
     {!isAnimatingOut && (
-        <motion.div {...slideInFromLeft}>
+    <motion.div {...slideInFromLeft}>
     <div className="resume-container">
       {/* <div className="resume-back" onClick={triggerAnimation1}>
             {'<'}
@@ -147,7 +147,7 @@ const Resume = () => {
     <motion.div {...slideInFromRight}>
     <AnimatePresence>
     {!isAnimatingOut && (
-      <motion.div {...slideInFromLeft}
+      <motion.div {...slideInFromRight}
           style={{
             zIndex: 1000, //on top of other content
           }}
@@ -160,10 +160,10 @@ const Resume = () => {
       />
       </div>
       </motion.div>
-      
       )}
     </AnimatePresence>
     </motion.div>
+    
     </motion.div>
    
     

@@ -29,6 +29,8 @@ body {
   color: #333;
   text-decoration: none;
   font-size: 3em;
+  background-color: transparent;
+  border: none;
   padding: 5px 20px;
   display: inline-flex;
   font-weight: 700;

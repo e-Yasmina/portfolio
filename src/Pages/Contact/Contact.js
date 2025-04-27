@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
 import AnimatedDots from "../../Components/AnimatedDots/AnimatedDots";
+import { pageAnim } from "../../utils/animationVariants";
+import { slideInFromLeft, slideInFromRight } from "../../utils/animationVariants";
 import "./Contact.css"; // Import the CSS file
 
 const Contact = () => {
@@ -84,32 +86,11 @@ const Contact = () => {
   };
   
   return (
-    <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.3, // Delay between child animations
-              },
-            },
-          }}
-        >
-    <motion.div
-        initial={{ x: '100vw', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-    >
+    <motion.div {...pageAnim} >
+    <motion.div {...slideInFromLeft}>
     <AnimatePresence>
     {!isAnimatingOut && (
-        <motion.div
-        exit={{ x: '-100vw', opacity: 0 }} // Start off-screen to the right
-        initial={{ x: '100vw', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-        >
+        <motion.div {...slideInFromLeft}>
         
     <div className="background">
       <div className="contact_container">
@@ -188,20 +169,14 @@ const Contact = () => {
     </AnimatePresence>
     </motion.div>
     <motion.div
-          initial={{ x: '-100vw', opacity: 0 }} // Start off-screen to the left
-          animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-          transition={{ type: 'tween', stiffness: 30, duration: 2 }}
+          {...slideInFromRight}
           style={{
             zIndex: 1000, //on top of other content
           }}
     >
     <AnimatePresence>
     {!isAnimatingOut && (
-        <motion.div
-        exit={{ x: '100vw', opacity: 0 }} // Start off-screen to the left
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-      >
+        <motion.div {...slideInFromRight}>
       <img 
         src={`${process.env.PUBLIC_URL}/Imgs/contact.png`}
         //src="/Imags/contact.png"
