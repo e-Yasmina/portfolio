@@ -24,7 +24,7 @@ const Menu = () => {
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
       navigate(path); // Navigate to the new page after the animation
-    }, 1000); // Adjust the timeout to match your animation duration
+    }, 2000); // Adjust the timeout to match your animation duration
   };
 
   return (
@@ -48,6 +48,7 @@ const Menu = () => {
             className="menu-link"
             data-text={item.name}
             onClick={() => handleNavigation(item.path)} // Trigger animation and navigation
+            style={isAnimatingOut ? { pointerEvents: "none" } : {}} // Disable button during animation
           >
               {item.name}
           </button>

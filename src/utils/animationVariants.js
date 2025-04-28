@@ -20,6 +20,8 @@ const pageVariants = {
     exit: { x: '100vw', opacity: 0 }, // Start off-screen to the right
     animate: { x: 0, opacity: 1 },   // Animate to its final position
     transition: { type: 'tween', stiffness: 20, duration: 2 },
+    style:{zIndex: 1000, //on top of other content
+    },
   };
   
   export const slideInFromLeft = {

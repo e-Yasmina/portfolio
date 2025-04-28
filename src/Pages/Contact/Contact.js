@@ -169,11 +169,7 @@ const Contact = () => {
     </AnimatePresence>
     </motion.div>
     <motion.div
-          {...slideInFromRight}
-          style={{
-            zIndex: 1000, //on top of other content
-          }}
-    >
+          {...slideInFromRight}>
     <AnimatePresence>
     {!isAnimatingOut && (
         <motion.div {...slideInFromRight}>

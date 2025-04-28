@@ -78,6 +78,17 @@ body {
   height: 1800px;
 }
 
+.menu-link.no-hover {
+  pointer-events: none; /* Disable hover interaction */
+  transition: none; /* Disable hover transition */
+}
+
+.menu-link.no-hover::before {
+  content: none; /* Disable the hover effect */
+  opacity: 0; /* Ensure it is invisible */
+  transition: none; /* Disable the transition */
+}
+/* 
 .menu-item:nth-child(6n+1) .menu-link::before {
   background-color: #ffbfb5;
   background-image: linear-gradient(147deg, #3e4aeb  0%, #ffbfb5 100%);
@@ -105,4 +116,4 @@ body {
 .menu-item:nth-child(6n+7) .menu-link::before {
   background: #3e4aeb;
   background-image: linear-gradient(147deg, #3e4aeb  40%, #ffbfb5 80%);
-}
+} */
