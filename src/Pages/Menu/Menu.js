@@ -11,7 +11,7 @@ const Menu = () => {
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const items = [
     { name: "Home", path: "/" },
-    { name: "Projects", path: "/notAvailablePage" },
+    { name: "Projects", path: "/projects" },
     { name: "Skills", path: "/skills" },
     { name: "Experience", path: "/exeperience&education" },
     { name: "Blogs", path: "/blogs" },

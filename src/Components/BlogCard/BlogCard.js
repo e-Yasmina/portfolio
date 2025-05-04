@@ -3,15 +3,15 @@ import "./BlogCard.css"; // Assuming you save the styles separately in BlogPost.
 
 const BlogPost = ({ image, date, title, description, link ,handleReadMore }) => {
   return (
-    <div class="blog_post">
-      <div class="img_pod">
+    <div className="blog_post">
+      <div className="img_pod">
         <img src={image} alt={title}/>
       </div>
-      <div class="card_container">
+      <div className="card_container">
        <h3>{date}</h3>
        <h1>{title}</h1>
        <p>{description}</p>
-       <a class="btn_primary" href={link} target="_blank" onClick={handleReadMore }>Read More</a>
+       <a className="btn_primary" href={link} target="_blank" onClick={handleReadMore }>Read More</a>
       </div>
     </div>
   );

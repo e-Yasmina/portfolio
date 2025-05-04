@@ -11,10 +11,17 @@ import Resume from './Pages/Resume/Resume';
 import Blog from './Pages/Blog/Blog';
 import Skills from './Pages/Skills/Skills';
 import Experience from './Pages/Experience/Experience';
-//import Header from './Components/Header/Header';
+import LaptopMockup from './Components/Laptop/Laptop';
 
 
 function App() {
+  //const url = "https://drive.google.com/uc?export=preview&id=10fFEM87hE-TaXGQFRo_QwB1SK3al4byD";
+  //const url = "https://youtu.be/k0645eXL0oc?si=gj2cKGza7s32u8eS";
+  const url = "https://www.w3schools.com/html/mov_bbb.mp4";
+
+
+
+    
   function RedirectHandler() {
     const navigate = useNavigate();
   
@@ -29,7 +36,7 @@ function App() {
     return null;
   }
   return (
-    <Router basename="/Portfolio">
+    <Router basename="/portfolio">
       <Helmet>
         <title>Yasmina Elbernoussi</title>
         <link rel="canonical" href="http://mysite.com/example" />
@@ -51,6 +58,7 @@ function App() {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/exeperience&education" element={<Experience />} />
+        <Route path="/new" element={<LaptopMockup videoUrl ={url}/>} />
       </Routes>
     </Router>
   );

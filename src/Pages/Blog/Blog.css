@@ -1,27 +1,91 @@
+
 .container {
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  max-height:100vh ;
   font-size: 10px;
+  margin-bottom: 2rem;
+}
+.back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
   margin-left: 3.5rem;
+  margin-top: 3.5rem;
 }
 
-.blogs-card{
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* .blogs-card{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8rem;
   padding: 4rem;
   margin-top: 2rem;
-}
+} */
 
-.blogs{
+/* .blogs{
   max-height: calc(100vh - 40px); 
   overflow-y: auto;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none; /* Hide scrollbar for Firefox 
 }
 .article-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+  display: none; /* Hide scrollbar for Chrome, Safari, Edge 
+} */
+
+
+.blogs-card {
+  width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.swiper {
+  width: 100%; /* Full width of the container */
+  overflow: hidden; /* Hide any overflow content */
+  position: relative; /* Ensure buttons are positioned relative to the container */
+}
+
+.swiper-slide {
+  margin-top: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* .swiper-wrapper-container {
+  position: relative;
+  padding: 40px 0; /* Add space for arrows 
+} */
+
+.blogs-card .swiper-button-next,
+.blogs-card .swiper-button-prev {
+  top: 80%; 
+  transform: none; 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 10;
+  color: #ffbfb5;
+}
+
+.blogs-card .swiper-button-next {
+  right: 10px; 
+}
+
+.blogs-card .swiper-button-prev {
+  left: 10px; 
 }

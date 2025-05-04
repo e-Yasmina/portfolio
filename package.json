@@ -2,7 +2,7 @@
   "name": "yasmina-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://e-yasmina.github.io/Portfolio/",
+  "homepage": "https://e-yasmina.github.io/portfolio/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -16,8 +16,10 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.3",
     "react-to-print": "^3.0.5",
-    "swiper": "^11.1.12",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
