@@ -1,4 +1,5 @@
 import React from "react";
+import LaptopMockup from '../../Components/Laptop/Laptop';
 import "./ProjectCard.css";
 
 const Card = (props) => {
@@ -6,14 +7,17 @@ const Card = (props) => {
     <div className="body">
     <div className="card" onClick={props.onClick}>
       <div className="container">
-        <img
-          className="project-image"
-          src={props.image}
-          alt={props.ImgT}
-        />
-        <h2>{props.title}</h2>
+        <div className="up-section">
+          <div>
+            <h2>{props.title}</h2>
+            <p>
+              {props.description}
+            </p>
+          </div>
+          <LaptopMockup videoUrl={props.url} />  
+        </div>
         <p>
-          {props.description}
+          {props.details}
         </p>
       </div>
     </div>
