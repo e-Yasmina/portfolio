@@ -4,10 +4,10 @@ import "./ProjectCard.css";
 
 const Card = (props) => {
   return (
-    <div className="body">
-    <div className="card" onClick={props.onClick}>
-      <div className="container">
-        <div className="up-section">
+    
+    <div className="project-card" onClick={props.onClick}>
+      <div className="pc-container">
+        <div className="pc-up-section">
           <div>
             <h2>{props.title}</h2>
             <p>
@@ -20,7 +20,6 @@ const Card = (props) => {
           {props.details}
         </p>
       </div>
-    </div>
     </div>
   );
 };

@@ -1,12 +1,12 @@
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 4 columns, each taking 1/4 of the width */
-    gap: 1rem; /* Add spacing between the cards */
-    padding: 1rem; /* Add padding around the grid */
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 columns, each taking 1/4 of the width */
+  gap: 1rem; /* Add spacing between the cards */
+  padding:1rem 1rem 1rem 15rem  ; /* Add padding around the grid */
+}
   
-  .card {
-    width: 100%; /* Ensure the card fills its grid cell */
-    height: 100%; /* Adjust height based on content */
-    box-sizing: border-box; /* Include padding and border in width/height */
-  }
+.project-card {
+  width: 100%; /* Ensure the card fills its grid cell */
+  height: 100%; /* Adjust height based on content */
+  box-sizing: border-box; /* Include padding and border in width/height */
+}

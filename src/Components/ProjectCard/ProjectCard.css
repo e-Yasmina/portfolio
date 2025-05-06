@@ -1,41 +1,39 @@
-.body{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    display: inline;
-    justify-content:center;
-    align-items:center;
-    background-color:transparent;
-  }
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
   
-  .project-image{
-    max-width: 100%;
-    object-fit: cover;
-    height: auto;
-    border-radius: 20px;
-  }
+.project-card{
+  border: 2px solid rgba(235, 235, 235, .35);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: 12px;
+  background: rgba(187, 205, 189, .25);
+  transition: all .25s ease;
+  color: #000000;
+  padding: 0.5rem;
+} 
   
-  .card{
-    /* width: 320px; */
-    border: 2px solid rgba(235, 235, 235, .35);
-    border-radius: 20px;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: 12px;
-    background: rgba(187, 205, 189, .25);
-    transition: all .25s ease;
-    color: #000000;
-    font-size: 1rem;
-  }
-  
-.container{
+.project-card:hover{
+  background: rgba(187, 205, 189, .55)
+}
+
+.pc-container{
   padding: 1em;
   gap: 1em;
 }
-  
-.card:hover{
-  background: rgba(187, 205, 189, .55)
+.pc-container h2{
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  color: #333;
+  letter-spacing: 0.5px;
 }
-.up-section{
+.pc-container p{
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  line-height: 1.45;
+}
+
+.pc-up-section{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
