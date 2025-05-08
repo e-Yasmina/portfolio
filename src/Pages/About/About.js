@@ -1,12 +1,11 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './About.css';
-
-
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import ImgHolder from '../../Components/ImgHolder/ImgHolder';
 import AboutContent from '../../Components/AboutContent/AboutContent';
+import { pageAnim, slideInFromRight, slideInFromLeft } from '../../utils/animationVariants';
 
 const Layout = () => {  
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -15,57 +14,46 @@ const Layout = () => {
   const triggerAnimation = () => {
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/menu"); 
+      navigate("/menu"); 
     }, 2000); 
   };
 
   const handleContactClick = () => {
     setIsAnimatingOut(true); // Start the exit animation
     setTimeout(() => {
-      navigate("/Portfolio/contact"); 
+      navigate("/contact"); 
     }, 2000); 
-    //navigate("/Portfolio/Contact");
+  };
+  
+  const handleResumeClick = () => {
+    setIsAnimatingOut(true); // Start the exit animation
+    setTimeout(() => {
+      navigate("/resume");
+    }, 2000); 
   };
 
   return (
-    <motion.div 
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.3, // Delay between child animations
-          },
-        },
-      }}
-    >
-    <div className="Layout">
-    <AnimatePresence>
-    {!isAnimatingOut && (
-        <motion.div
-        exit={{ x: '100vw', opacity: 0 }} // Start off-screen to the right
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-        >
-          <ImgHolder />
-        </motion.div>
-      )}
-    </AnimatePresence>
-    <AnimatePresence>
-    {!isAnimatingOut && (
-        <motion.div
-        exit={{ x: '-100vw', opacity: 0 }} // Start off-screen to the left
-        animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-        transition={{ type: 'tween', stiffness: 30, duration: 2 }}
-      >
-        <AboutContent onButtonClick={triggerAnimation} handleContactClick={handleContactClick}/>
-      </motion.div>
-      )}
-    
-    </AnimatePresence>
-    </div>
+    <motion.div {...pageAnim} className="motion_div">
+      <div className="Layout">
+        <AnimatePresence>
+          {!isAnimatingOut && (
+            <motion.div {...slideInFromRight}>
+              <ImgHolder />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {!isAnimatingOut && (
+            <motion.div {...slideInFromLeft}>
+              <AboutContent 
+                onButtonClick={triggerAnimation} 
+                handleContactClick={handleContactClick} 
+                handleResumeClick={handleResumeClick}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.div>
   );
 };

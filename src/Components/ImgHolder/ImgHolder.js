@@ -2,13 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import './ImgHolder.css';
+import { slideInFromLeft, slideInFromRight } from '../../utils/animationVariants';
 
 const ImgHolder = () => {
   return (
     <motion.div
-      initial={{ x: '-100vw', opacity: 0 }} // Start off-screen to the left
-      animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-      transition={{ type: 'tween', stiffness: 30, duration: 2 }}
+      {...slideInFromRight}
       style={{
         position: 'relative',
         zIndex: 10, // Ensure this is always on top of other content

@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import AnimatedDots from '../AnimatedDots/AnimatedDots';
 import './AboutContent.css';
+import { s } from 'framer-motion/client';
+import { slideInFromLeft } from '../../utils/animationVariants';
 
-const AboutContent = ({ onButtonClick, handleContactClick }) => {
+const AboutContent = ({ onButtonClick, handleContactClick, handleResumeClick }) => {
 
   return (
-    <motion.div
-    initial={{ x: '100vw', opacity: 0 }} // Start off-screen to the right
-    animate={{ x: 0, opacity: 1 }}       // Animate to its final position
-    transition={{ type: 'tween', stiffness: 20, duration: 2 }}
-    >
+    <motion.div {...slideInFromLeft}>
     <div className="About">
       <div className="About__wrp ">
         <button
@@ -34,9 +33,19 @@ const AboutContent = ({ onButtonClick, handleContactClick }) => {
             <div className="About__text">
             Passionate about advancing digital healthcare technologies and leveraging Health IT and AI to drive innovation and improve healthcare outcomes.
             </div>
-            <button className="About__button" onClick={onButtonClick}>READ MORE</button>
+            {/* <button className="About__button" onClick={onButtonClick}>READ MORE</button> */}
+            <AnimatedDots onButtonClick={onButtonClick}/>
           </div>
         </div>
+        <button
+          onClick={handleResumeClick}
+          className="resume-button">
+          <img
+            src={`${process.env.PUBLIC_URL}/Icons/cv (1).png`}
+            alt="CV"
+            className="resume-image"
+          />
+        </button>
       </div>
     </div>
     </motion.div>

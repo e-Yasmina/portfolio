@@ -1,36 +1,27 @@
-/* *, *:before, *:after {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  } */
-  
-  
-  /* body, button, input {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-  } */
-  
+
 .background {
     display: flex;
     justify-self: center;
+    align-self: center;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 1.4px;
-    width: 120%;
+    width: 100vw;
 }
   
-.container {
-    flex: 0 1 700px;
+.contact_container{
+    flex: 0 1 900px;
     margin: auto;
     padding: 10px;
 }
   
   .screen {
+    width: 75%;
     position: relative;
     background: #534959;
     border-radius: 15px;
+    margin: auto;
   }
   
   .screen:after {
@@ -56,12 +47,20 @@
   }
   
   .screen-header-left {
-    margin-right: auto; 
+    /* margin-right: auto; 
     cursor: pointer;
     color:#ffbfb5 ;
     outline: none;
     background: none;
     border: none;
+    font-size: 20px; */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: auto; 
   }
 
 
@@ -80,6 +79,7 @@
     outline: none;
     background: none;
     border: none;
+    margin-right: 10px;
   }
   
   .screen-header-ellipsis {
@@ -178,9 +178,9 @@
     color: #e7ada4;
   }
  .contact-img{
-    transform: translate(-60%,-110%);
-    width: 60%;
-    height: 60%;
+    transform: translate(70%,-100%);
+    width: 20%;
+    height: 20%;
   }
   
   @media screen and (max-width: 520px) {

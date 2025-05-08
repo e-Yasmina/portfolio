@@ -1,0 +1,15 @@
+.skills_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0.5rem;
+    /* font-size: 2rem; */
+    max-height: calc(100vh - 40px); 
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.article-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+}

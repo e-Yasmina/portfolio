@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+  
+.project-card{
+  border: 2px solid rgba(235, 235, 235, .35);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: 12px;
+  background: rgba(187, 205, 189, .25);
+  transition: all .25s ease;
+  color: #000000;
+  padding: 0.5rem;
+} 
+  
+.project-card:hover{
+  background: rgba(187, 205, 189, .55)
+}
+
+.pc-container{
+  padding: 1em;
+  gap: 1em;
+}
+.pc-container h2{
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+.pc-container p{
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  line-height: 1.45;
+}
+
+.pc-up-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
