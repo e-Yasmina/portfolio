@@ -30,9 +30,15 @@ const Accordion = () => {
   return (
     <motion.div {...pageAnim} className="motion_div">
       <div className="wrapper">
-        <button className="back-button" onClick={triggerAnimation}>
+        {/* <button className="back-button" onClick={triggerAnimation}>
           &larr; Back
-        </button>
+        </button> */}
+        <div class="image-container" onClick={triggerAnimation}>
+          <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-b.png`} alt="Blue Arrow" class="image blue-arrow" />
+          <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-2.png`} alt="Pink Arrow" class="image pink-arrow" />
+          <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-bb.png`} alt="Pink Arrow" class="image both-arrow" />
+        </div>
+
         <h2 className="main-title">
           {Array.from("My Skills & Expertise:").map((letter, index) => (
             <AnimatePresence>

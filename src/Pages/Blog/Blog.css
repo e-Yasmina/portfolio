@@ -9,16 +9,7 @@
   font-size: 10px;
   margin-bottom: 2rem;
 }
-.back-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 3.5rem;
-  margin-top: 3.5rem;
-}
+
 
 .back-button:hover {
   background-color: #0056b3;
@@ -44,6 +35,7 @@
 
 
 .blogs-card {
+  margin-top: 6rem;
   width: 100%;
   max-width: 100vw;
   max-height: 100vh;

@@ -94,7 +94,7 @@ const Contact = () => {
         
     <div className="background">
       <div className="contact_container">
-        <div className="screen">
+        <div className="contact-screen ">
           <div className="screen-header">
             {/* <div className="screen-header-left" onClick={triggerAnimation1}>
             {'<'}

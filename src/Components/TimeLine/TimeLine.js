@@ -11,9 +11,14 @@ const TimeLine = () => {
 
   return (
     <motion.main {...pageAnim}>
-      <button className="back-button" onClick={() => navigate(-1)}>
+      {/* <button className="back-button" onClick={() => navigate(-1)}>
         &larr; Back
-      </button>
+      </button> */}
+      <div class="image-container" onClick={() => navigate(-1)}>
+        <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-b.png`} alt="Blue Arrow" class="image blue-arrow" />
+        <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-2.png`} alt="Pink Arrow" class="image pink-arrow" />
+        <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-bb.png`} alt="Pink Arrow" class="image both-arrow" />
+      </div>
       {timelineTexts.map((text, index) => (
         <motion.div
           index={index}

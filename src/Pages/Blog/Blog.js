@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Blog.css";
 import BlogPost from "../../Components/BlogCard/BlogCard";
+import { blogPosts } from "../../constants";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,35 +30,15 @@ const BlogPage = () => {
     }
   };
 
-  const blogPosts = [
-    {
-      image: `${process.env.PUBLIC_URL}/BlogImgs/image1.png`,
-      date: "28 Mars 2025",
-      title: "From Junior to Senior",
-      description:
-        "The key difference between juniors and seniors isn’t just knowing a programming language it’s about handling real-world projects effectively.",
-    },
-    {
-      image: `${process.env.PUBLIC_URL}/BlogImgs/image2.png`,
-      date: "27 Mars 2025",
-      title: "Blog Card",
-      description:
-        "The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).",
-    },
-    {
-      image: `${process.env.PUBLIC_URL}/BlogImgs/image2.png`,
-      date: "27 Mars 2025",
-      title: "Blog Card",
-      description:
-        "The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).",
-    },
-  ];
+  
 
   return (
     <div className="container">
-      <button className="back-button" onClick={handleBackB}>
-        &larr; Back
-      </button>
+      <div class="image-container" onClick={handleBackB}>
+       <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-b.png`} alt="Blue Arrow" class="image blue-arrow" />
+       <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-2.png`} alt="Pink Arrow" class="image pink-arrow" />
+       <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-bb.png`} alt="Pink Arrow" class="image both-arrow" />
+      </div>
 
       <div className="blogs-card">
         <Swiper

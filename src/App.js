@@ -12,12 +12,13 @@ import Blog from './Pages/Blog/Blog';
 import Skills from './Pages/Skills/Skills';
 import Experience from './Pages/Experience/Experience';
 import LaptopMockup from './Components/Laptop/Laptop';
+import MobileMockup from './Components/Mobile/MobileMockup';
 
 
 function App() {
   //const url = "https://drive.google.com/uc?export=preview&id=10fFEM87hE-TaXGQFRo_QwB1SK3al4byD";
   //const url = "https://youtu.be/k0645eXL0oc?si=gj2cKGza7s32u8eS";
-  const url = "https://www.w3schools.com/html/mov_bbb.mp4";
+  const url = "https://res.cloudinary.com/dmjjltmhr/video/upload/v1747493082/h4fdbusd1tsvyelobyq0.mp4";
 
 
 
@@ -58,7 +59,7 @@ function App() {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/exeperience&education" element={<Experience />} />
-        <Route path="/new" element={<LaptopMockup videoUrl ={url}/>} />
+        <Route path="/new" element={<MobileMockup videoUrl={url}/>} />
       </Routes>
     </Router>
   );

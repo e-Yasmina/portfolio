@@ -1,5 +1,58 @@
 body {
   background-color: #ffbfb5;
   background-image: linear-gradient(147deg, #ffbfb5 0%, #3e4aeb 100%);
+  height: 100%;
+  width: 100%;
 }
 
+.image-container {
+  position: absolute;
+  width: 100px; /* Adjust based on your image size */
+  height: 100px; /* Adjust based on your image size */
+  top: 0%;
+  left: 0%;
+}
+
+.image {
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%; /* Ensure the images are the same size */
+  height: 60%;
+  opacity: 0; /* Start with images hidden */
+  animation: fadeAnimation 3s infinite; /* Apply animation */
+}
+
+.blue-arrow {
+  animation-delay: 0s; /* Blue arrow starts first */
+}
+
+.pink-arrow {
+  animation-delay: 1s; /* Pink arrow starts after 1 second */
+}
+
+.both-arrow {
+  animation-delay: 2s; /* Pink arrow starts after 1 second */
+}
+
+@keyframes fadeAnimation {
+  0%, 100% {
+    opacity: 0; /* Hidden at the start and end */
+  }
+  33% {
+    opacity: 1; /* Fully visible */
+  }
+  66% {
+    opacity: 0; /* Hidden again */
+  }
+}
+
+.image-container:hover .image {
+  animation-play-state: paused; /* Pause animation on hover */
+  animation: none; /* Stop the animation */
+  opacity: 0; /* Hide all images */
+}
+.image-container:hover .both-arrow {
+  opacity: 1; /* Show only the back-arrow.png image */
+}
