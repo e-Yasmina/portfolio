@@ -2,9 +2,9 @@
 .mobile-phone {
   position: relative;
   width: 25%;
-  max-width: 350px;
-  aspect-ratio: 9 / 19.6; /* Maintain a phone-like aspect ratio */
-  padding: 1% 1% 1.5%;
+  /* max-width: 350px; */
+  aspect-ratio: 9 / 19.2; /* Maintain a phone-like aspect ratio */
+  padding: 0.5% 1% 1.2%;
   box-shadow: 0 0 20px #e2e2e2;
   border-radius: 5%;
   display: flex;
@@ -16,9 +16,9 @@
 
 .brove {
   position: absolute;
-  top: 1.6%;
-  width: 40%;
-  height: 2%;
+  top: 2.8%;
+  width: 30%;
+  height: 2.2%;
   background: white;
   left: 50%;
   transform: translateX(-50%);

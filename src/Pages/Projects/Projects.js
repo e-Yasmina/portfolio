@@ -1,17 +1,22 @@
 import React,{useState} from 'react';
-import { motion, AnimatePresence } from "framer-motion";
 import Card from '../../Components/ProjectCard/ProjectCard';
 import { projects } from '../../constants';
 import { useNavigate } from 'react-router-dom';
 import './Projects.css';
 import {  } from 'framer-motion/client';
 
+// Framer Motion imports
+import { motion, AnimatePresence } from "framer-motion";
+import { alternateSlideIn } from "../../utils/animationVariants";
+
 
 
 const Projects = () => { 
-    // Track the hovered card 
-    const [hoveredCard, setHoveredCard] = useState(null);
-    const navigate = useNavigate();
+   
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+   // Track the hovered card 
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate = useNavigate();
     
      
   const handleDotsMouseEnter = (id) => {
@@ -23,9 +28,16 @@ const Projects = () => {
   }
   const handleBackB = () => {
     if (window.history.length > 1) {
-      navigate(-1);
+      setIsAnimatingOut(true); // Start the exit animation
+      setTimeout(() => {
+        navigate(-1);
+      }, 2000);
+      
     } else {
-      navigate("/menu");
+      setIsAnimatingOut(true); // Start the exit animation
+      setTimeout(() => {
+        navigate("/menu");
+      }, 2000);
     }
   };
   
@@ -41,7 +53,11 @@ const Projects = () => {
       <div className="projects-container">
         {projects.map((project) => (
         hoveredCard === project.id || !hoveredCard ? (
-          <div key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}>
+          <motion.div {...alternateSlideIn(project.id)} key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}>
+            <AnimatePresence>
+            {!isAnimatingOut && (
+            <motion.div {...alternateSlideIn(project.id)}>
+          {/* <div key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}> */}
               <Card
                 title={project.title}
                 type={project.type}
@@ -74,7 +90,11 @@ const Projects = () => {
               </div>
               <span className="tooltip">close the project</span>
               </div>}
-          </div>
+          {/* </div> */}
+          </motion.div>
+          )}
+          </AnimatePresence>
+          </motion.div>
         ): null
         ))}
       </div>

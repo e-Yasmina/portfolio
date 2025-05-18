@@ -73,7 +73,7 @@ const Resume = () => {
       {/* <div className="resume-back" onClick={triggerAnimation1}>
             {'<'}
       </div> */}
-      <button className="back-button" onClick={triggerAnimation1}>
+      <button className="resume-back" onClick={triggerAnimation1}>
             &larr; Back
       </button>
       <div className="resume-card">

@@ -11,10 +11,11 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
 // Framer Motion imports
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { alternateSlideIn } from "../../utils/animationVariants";
 
 const BlogPage = () => {
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [blog, setBlog] = useState(0);
   const navigate = useNavigate();
 
@@ -24,12 +25,18 @@ const BlogPage = () => {
 
   const handleBackB = () => {
     if (window.history.length > 1) {
-      navigate(-1);
+      setIsAnimatingOut(true); // Start the exit animation
+      setTimeout(() => {
+        navigate(-1);
+      }, 2000);
+      
     } else {
-      navigate("/menu");
+      setIsAnimatingOut(true); // Start the exit animation
+      setTimeout(() => {
+        navigate("/menu");
+      }, 2000);
     }
   };
-
   
 
   return (
@@ -53,6 +60,9 @@ const BlogPage = () => {
             <SwiperSlide key={index}>
               {/* Wrap each BlogPost with motion.div */}
               <motion.div {...alternateSlideIn(index)}>
+                <AnimatePresence>
+                {!isAnimatingOut && (
+                <motion.div {...alternateSlideIn(index)}>
                 <BlogPost
                   image={post.image}
                   date={post.date}
@@ -60,6 +70,9 @@ const BlogPage = () => {
                   description={post.description}
                   handleReadMore={() => handleReadMore(index)}
                 />
+                </motion.div>
+                )}
+                </AnimatePresence>
               </motion.div>
             </SwiperSlide>
           ))}
