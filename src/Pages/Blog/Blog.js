@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Blog.css";
 import BlogPost from "../../Components/BlogCard/BlogCard";
+import { blogPosts } from "../../constants";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,10 +11,11 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
 // Framer Motion imports
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { alternateSlideIn } from "../../utils/animationVariants";
 
 const BlogPage = () => {
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [blog, setBlog] = useState(0);
   const navigate = useNavigate();
 
@@ -23,41 +25,27 @@ const BlogPage = () => {
 
   const handleBackB = () => {
     if (window.history.length > 1) {
-      navigate(-1);
+      setIsAnimatingOut(true); // Start the exit animation
+      setTimeout(() => {
+        navigate(-1);
+      }, 2000);
+      
     } else {
-      navigate("/menu");
+      setIsAnimatingOut(true); // Start the exit animation
+      setTimeout(() => {
+        navigate("/menu");
+      }, 2000);
     }
   };
-
-  const blogPosts = [
-    {
-      image: `${process.env.PUBLIC_URL}/BlogImgs/image1.png`,
-      date: "28 Mars 2025",
-      title: "From Junior to Senior",
-      description:
-        "The key difference between juniors and seniors isn’t just knowing a programming language it’s about handling real-world projects effectively.",
-    },
-    {
-      image: `${process.env.PUBLIC_URL}/BlogImgs/image2.png`,
-      date: "27 Mars 2025",
-      title: "Blog Card",
-      description:
-        "The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).",
-    },
-    {
-      image: `${process.env.PUBLIC_URL}/BlogImgs/image2.png`,
-      date: "27 Mars 2025",
-      title: "Blog Card",
-      description:
-        "The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).",
-    },
-  ];
+  
 
   return (
     <div className="container">
-      <button className="back-button" onClick={handleBackB}>
-        &larr; Back
-      </button>
+      <div class="image-container" onClick={handleBackB}>
+       <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-b.png`} alt="Blue Arrow" class="image blue-arrow" />
+       <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-2.png`} alt="Pink Arrow" class="image pink-arrow" />
+       <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-bb.png`} alt="Pink Arrow" class="image both-arrow" />
+      </div>
 
       <div className="blogs-card">
         <Swiper
@@ -72,6 +60,9 @@ const BlogPage = () => {
             <SwiperSlide key={index}>
               {/* Wrap each BlogPost with motion.div */}
               <motion.div {...alternateSlideIn(index)}>
+                <AnimatePresence>
+                {!isAnimatingOut && (
+                <motion.div {...alternateSlideIn(index)}>
                 <BlogPost
                   image={post.image}
                   date={post.date}
@@ -79,6 +70,9 @@ const BlogPage = () => {
                   description={post.description}
                   handleReadMore={() => handleReadMore(index)}
                 />
+                </motion.div>
+                )}
+                </AnimatePresence>
               </motion.div>
             </SwiperSlide>
           ))}

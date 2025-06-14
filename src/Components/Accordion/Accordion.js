@@ -11,6 +11,7 @@ const Accordion = () => {
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [selected, setSelected] = useState(null);
 
+
   const items = [
     "🖥️ Frontend Development",
     "⚙️ Backend Development",
@@ -30,9 +31,15 @@ const Accordion = () => {
   return (
     <motion.div {...pageAnim} className="motion_div">
       <div className="wrapper">
-        <button className="back-button" onClick={triggerAnimation}>
+        {/* <button className="back-button" onClick={triggerAnimation}>
           &larr; Back
-        </button>
+        </button> */}
+        <div class="image-container" onClick={triggerAnimation}>
+          <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-b.png`} alt="Blue Arrow" class="image blue-arrow" />
+          <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-2.png`} alt="Pink Arrow" class="image pink-arrow" />
+          <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-bb.png`} alt="Pink Arrow" class="image both-arrow" />
+        </div>
+
         <h2 className="main-title">
           {Array.from("My Skills & Expertise:").map((letter, index) => (
             <AnimatePresence>
@@ -51,7 +58,7 @@ const Accordion = () => {
             <AnimatePresence>
               {!isAnimatingOut && (
                 <motion.div {...alternateSlideIn(key)}>
-                  <div className="accordion-item">
+                  {/* <div className="accordion-item">
                     <input
                       type="radio"
                       id={`radio${key}`}
@@ -73,7 +80,29 @@ const Accordion = () => {
                         />
                       </div>
                     )}
+                  </div> */}
+                  <div className="accordion-item">
+                    <div
+                      className="item"
+                        onClick={() =>
+                          setSelected(selected === key ? null : key)
+                         }
+                    >
+                  <div className="title">
+                    {val}
+                    {/* <span className={`arrow ${selected === key ? "open" : ""}`}>▼</span> */}
                   </div>
+                  </div>
+                    {selected === key && (
+                      <div className="content">
+                        <SkillsContent
+                          title={content[key].title}
+                          text={content[key].text}
+                       />
+                      </div>
+                  )}
+                </div>
+
                 </motion.div>
               )}
             </AnimatePresence>

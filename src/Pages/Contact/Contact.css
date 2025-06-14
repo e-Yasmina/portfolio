@@ -11,12 +11,12 @@
 }
   
 .contact_container{
-    flex: 0 1 900px;
+    flex: 0 1 70%;
     margin: auto;
     padding: 10px;
 }
   
-  .screen {
+  .contact-screen {
     width: 75%;
     position: relative;
     background: #534959;
@@ -24,7 +24,7 @@
     margin: auto;
   }
   
-  .screen:after {
+  .contact-screen:after {
     content: '';
     display: block;
     position: absolute;
