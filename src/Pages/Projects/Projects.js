@@ -48,16 +48,14 @@ const Projects = () => {
        <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-b.png`} alt="Pink Arrow" class="image pink-arrow" />
        <img src={`${process.env.PUBLIC_URL}/Icons/back-arrow-bb.png`} alt="Pink Arrow" class="image both-arrow" />
       </div>
-
-      
       <div className="projects-container">
         {projects.map((project) => (
         hoveredCard === project.id || !hoveredCard ? (
           <motion.div {...alternateSlideIn(project.id)} key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}>
             <AnimatePresence>
             {!isAnimatingOut && (
-            <motion.div {...alternateSlideIn(project.id)}>
-          {/* <div key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}> */}
+            <motion.div {...alternateSlideIn(project.id)} key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}>
+              {/* <div key={project.id} className={`card-div ${hoveredCard === project.id ? "hovered" : ""}`}> */}
               <Card
                 title={project.title}
                 type={project.type}
@@ -72,23 +70,23 @@ const Projects = () => {
               />
               {!hoveredCard && <div
               className="hover-indicator"
-              onMouseEnter={() => handleDotsMouseEnter(project.id)}>
+              onClick={() => handleDotsMouseEnter(project.id)}>
               <div className="dots">
                 <span>•</span>
                 <span>•</span>
                 <span>•</span>
               </div>
-              <span className="tooltip">Hover for more info</span>
+              <span className="tooltip">Click for more info</span>
               </div>}
               {hoveredCard && <div
               className="out"
-              onMouseEnter={() => handleArrowsMouseEnter()}>
+              onClick={() => handleArrowsMouseEnter()}>
               <div className="arrows">
                 <span>‹</span>
                 <span>‹</span>
                 <span>‹</span>
               </div>
-              <span className="tooltip">close the project</span>
+              <span className="tooltip">Close project details</span>
               </div>}
           {/* </div> */}
           </motion.div>

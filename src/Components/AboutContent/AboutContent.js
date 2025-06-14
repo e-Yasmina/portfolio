@@ -25,10 +25,10 @@ const AboutContent = ({ onButtonClick, handleContactClick, handleResumeClick }) 
             <span className="About__subtitle">About</span>
             <div className="About__title">Yasmina Elbernoussi</div>
             <div className="About__text">
-            Software Engineer with a solid foundation in full-stack web and mobile development. Skilled in designing, developing, and deploying applications using React, Node.js, Laravel, and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within Agile teams.
+            Junior Software Engineer with hands-on experience building web and mobile apps. Skilled in designing, developing, and deploying applications using React, Node.js, Laravel, and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within Agile teams.
             </div>
             <div className="About__text">
-            Holding a state engineer diploma, I am eager to contribute to dynamic environments by delivering impactful and scalable software solutions.
+            Driven by a deep passion for software engineering and holding a state engineer diploma, I am eager to contribute to dynamic environments by building impactful and scalable software solutions.
             </div>
             <div className="About__text">
             Passionate about advancing digital healthcare technologies and leveraging Health IT and AI to drive innovation and improve healthcare outcomes.

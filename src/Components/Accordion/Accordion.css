@@ -5,8 +5,8 @@
   margin-right: 0.5rem;
   text-align: center;
   font-family: 'Abril Fatface', cursive;
-  font-size: 2rem;
-  color: #4B5F80;
+  font-size: 1.5rem;
+  /* color: #4B5F80; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
     display: block;
     margin: 0rem 0.5rem;
     flex: 1;
-    border-bottom: 1px solid #4B5F80;
+    border-bottom: 1px solid #4b4b4b;
   }
 }
 .motion_div{
@@ -81,16 +81,16 @@ input[type='radio'] {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
-    /* aligned arrow */
+    /* aligned arrow
   display: flex;
   justify-content: space-between;
   align-items: center;
    /* arrow icon */
-  &:after {
+  /* &:after {
     content: '\25bc';
     display: inline-block;
     font-size: 12px;
-  }
+  } */
 }
 .content {
   width: 95%;

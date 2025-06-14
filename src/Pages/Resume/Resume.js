@@ -83,15 +83,17 @@ const Resume = () => {
           <p className="resume-contact">Email: yasminaelbernoussi@gmail.com | Phone: +212602572433</p>
           <hr className="resume-divider" />
           <p className="resume-description">
-          Software Engineer with a solid foundation in <strong>full-stack web and mobile development</strong>. Skilled in designing, developing, and deploying applications using <strong>React, Node.js, Laravel,</strong> and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within <strong>Agile teams</strong>. Proficient in French and English, with a passion for delivering reliable and scalable solutions.
+          Junior Software Engineer with a solid foundation in <strong>full-stack web and mobile development</strong>. Skilled in designing, developing, and deploying applications using <strong>React, Node.js, Laravel,</strong> and cloud technologies. Experienced in implementing CI/CD pipelines, optimizing system performance, and collaborating within <strong>Agile teams</strong>. Proficient in French and English, with a passion for delivering reliable and scalable solutions.
           </p>
           <div className="resume-section">
             <h2 className="resume-section-title">Experience</h2>
             <div className="resume-experience">
-              <h3 className="resume-experience-title">Software Engineer - Magna Worldwide</h3>
-              <p className="resume-experience-date">March 2024 - June 2024</p>
+              <h3 className="resume-experience-title">Software Engineering Intern - Magna Worldwide</h3>
+              <p className="resume-experience-date">March 2024 - August 2024</p>
               <p className="resume-experience-description">
-                - Developed a suite of mobile applications using Ionic, Angular, and <strong>Laravel,</strong> connecting doctors, pharmacists, patients, and delivery personnel. <br />
+                - Participating in the Development of four mobile applications using Ionic, Angular, and <strong>Laravel,</strong> connecting doctors, pharmacists, patients, and delivery personnel. <br />
+                - Building <strong>RESTful APIs</strong> and securing them with <strong>Laravel Passport</strong>. 
+                - Integrating <strong>Laravel Cache</strong> mechanisms to boost performance and efficiency.
                 - Integrated <strong>RESTful APIs</strong> for seamless communication between frontend and backend services. <br />
                 - Focused on code maintainability and usability for <strong>cross-platform compatibility</strong>.
               </p>
@@ -99,7 +101,7 @@ const Resume = () => {
 
             <div className="resume-experience">
                <h3 className="resume-experience-title">Web Development Intern - Plaruce Engineering</h3>
-               <p className="resume-experience-date">Jun 2020 - Dec 2021</p>
+               <p className="resume-experience-date">Jun 2023 - August 2023</p>
                <p className="resume-experience-description">
                   - Designed and developed a company-focused website using WordPress, HTML, and CSS. <br />
                   - Implemented an SEO strategy to enhance the website’s online visibility. 

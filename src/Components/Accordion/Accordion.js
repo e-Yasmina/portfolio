@@ -11,6 +11,7 @@ const Accordion = () => {
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [selected, setSelected] = useState(null);
 
+
   const items = [
     "🖥️ Frontend Development",
     "⚙️ Backend Development",
@@ -57,7 +58,7 @@ const Accordion = () => {
             <AnimatePresence>
               {!isAnimatingOut && (
                 <motion.div {...alternateSlideIn(key)}>
-                  <div className="accordion-item">
+                  {/* <div className="accordion-item">
                     <input
                       type="radio"
                       id={`radio${key}`}
@@ -79,7 +80,29 @@ const Accordion = () => {
                         />
                       </div>
                     )}
+                  </div> */}
+                  <div className="accordion-item">
+                    <div
+                      className="item"
+                        onClick={() =>
+                          setSelected(selected === key ? null : key)
+                         }
+                    >
+                  <div className="title">
+                    {val}
+                    {/* <span className={`arrow ${selected === key ? "open" : ""}`}>▼</span> */}
                   </div>
+                  </div>
+                    {selected === key && (
+                      <div className="content">
+                        <SkillsContent
+                          title={content[key].title}
+                          text={content[key].text}
+                       />
+                      </div>
+                  )}
+                </div>
+
                 </motion.div>
               )}
             </AnimatePresence>

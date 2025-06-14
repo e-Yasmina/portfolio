@@ -4,18 +4,26 @@
   gap: 1rem; /* Add spacing between the cards */
   padding:1rem 1rem 2rem 15rem  ; /* Add padding around the grid */
   /* Scrolling */
-  /* max-height: calc(100vh - 40px); 
   overflow-y: auto;
-  scrollbar-width: none; Hide scrollbar for Firefox */
+  scrollbar-width: none; /*Hide scrollbar for Firefox*/
+  max-height: 100vh;
 }
+
 .projects-container::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari, Edge */
 }
+
 .card-div.hovered {
   grid-column: span 4; 
   transform: scale(1.1); 
   z-index: 10; 
+  max-height: 90vh;
 }
+.card-div{
+  height: 100%;
+  position: relative;
+}
+
 
 .project-card {
   width: 100%;
@@ -61,12 +69,13 @@
 }
 .out {
   position: absolute;
-  bottom: 50px;
-  left: 92%;
+  bottom: 10px;
+  left: 94%;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
+  font-weight: 700;
   color: #555;
   cursor: pointer;
   z-index: 10;
