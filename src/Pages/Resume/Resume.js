@@ -145,7 +145,6 @@ const Resume = () => {
     </AnimatePresence>
     </motion.div>
 
-    //Image 
     <motion.div {...slideInFromRight}>
     <AnimatePresence>
     {!isAnimatingOut && (
