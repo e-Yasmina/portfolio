@@ -14,55 +14,119 @@ import Experience from './Pages/Experience/Experience';
 import LaptopMockup from './Components/Laptop/Laptop';
 import MobileMockup from './Components/Mobile/MobileMockup';
 
-
 function App() {
-  //const url = "https://drive.google.com/uc?export=preview&id=10fFEM87hE-TaXGQFRo_QwB1SK3al4byD";
-  //const url = "https://youtu.be/k0645eXL0oc?si=gj2cKGza7s32u8eS";
-  const url = "https://res.cloudinary.com/dmjjltmhr/video/upload/v1747493082/h4fdbusd1tsvyelobyq0.mp4";
+  return (
+    <>
+      <Helmet>
+        <title>Portfolio Moved | Yasmina Elbernoussi</title>
+
+        <meta
+          name="description"
+          content="This portfolio has moved to a new website."
+        />
+
+        <meta
+          property="og:title"
+          content="Yasmina Elbernoussi — New Portfolio"
+        />
+
+        <meta
+          property="og:description"
+          content="This portfolio has moved. Visit my new portfolio."
+        />
+
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/e-Yasmina/portfolio/refs/heads/main/public/favicon.ico"
+        />
+
+        <meta
+          property="og:url"
+          content="https://e-yasmina.github.io/portfolio/"
+        />
+
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <main className="moved-page">
+        <h1>This portfolio has moved</h1>
+
+        <p>
+          You're viewing an older version of my portfolio.
+          I've moved to a new and updated website.
+        </p>
+
+        <a
+          href="https://e-yasmina.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="portfolio-card"
+        >
+          {/* preview */}
+          <img
+            src="https://raw.githubusercontent.com/e-Yasmina/portfolio/refs/heads/main/public/favicon.ico"
+            alt="Preview of my new portfolio"
+          />
+
+          <div>
+            <h2>Yasmina Elbernoussi</h2>
+            <p>Explore my new portfolio →</p>
+          </div>
+        </a>
+      </main>
+    </>
+  );
+}
+
+
+// function App() {
+//   //const url = "https://drive.google.com/uc?export=preview&id=10fFEM87hE-TaXGQFRo_QwB1SK3al4byD";
+//   //const url = "https://youtu.be/k0645eXL0oc?si=gj2cKGza7s32u8eS";
+//   const url = "https://res.cloudinary.com/dmjjltmhr/video/upload/v1747493082/h4fdbusd1tsvyelobyq0.mp4";
 
 
 
     
-  function RedirectHandler() {
-    const navigate = useNavigate();
+//   function RedirectHandler() {
+//     const navigate = useNavigate();
   
-    useEffect(() => {
-      const params = new URLSearchParams(window.location.search);
-      const redirectPath = params.get("redirect");
-      if (redirectPath) {
-        navigate(redirectPath.replace("/Portfolio", ""));
-      }
-    }, []);
+//     useEffect(() => {
+//       const params = new URLSearchParams(window.location.search);
+//       const redirectPath = params.get("redirect");
+//       if (redirectPath) {
+//         navigate(redirectPath.replace("/Portfolio", ""));
+//       }
+//     }, []);
   
-    return null;
-  }
-  return (
-    <Router basename="/portfolio">
-      <Helmet>
-        <title>Yasmina Elbernoussi</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
+//     return null;
+//   }
+//   return (
+//     <Router basename="/portfolio">
+//       <Helmet>
+//         <title>Yasmina Elbernoussi</title>
+//         <link rel="canonical" href="http://mysite.com/example" />
+//       </Helmet>
       
-      <nav>
-          {/* <a href="Portfolio/">About</a> | <a href="Portfolio/Menu">Menu</a> | <a href="Portfolio/contact">Contact</a> | <a href="Portfolio/projects">Projects</a> | <a href="Portfolio/resume">Resume</a> */}
-          {/* <a href="/Portfolio/blog">Blog</a> */}
-      </nav>
+//       <nav>
+//           {/* <a href="Portfolio/">About</a> | <a href="Portfolio/Menu">Menu</a> | <a href="Portfolio/contact">Contact</a> | <a href="Portfolio/projects">Projects</a> | <a href="Portfolio/resume">Resume</a> */}
+//           {/* <a href="/Portfolio/blog">Blog</a> */}
+//       </nav>
       
-      <RedirectHandler /> {/* Handle GitHub Pages redirects */}
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/notAvailablePage" element={<NotAvailablePage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/exeperience&education" element={<Experience />} />
-        <Route path="/new" element={<MobileMockup videoUrl={url}/>} />
-      </Routes>
-    </Router>
-  );
-}
+//       <RedirectHandler /> {/* Handle GitHub Pages redirects */}
+//       <Routes>
+//         <Route path="/" element={<Layout />} />
+//         <Route path="/menu" element={<Menu />} />
+//         <Route path="/notAvailablePage" element={<NotAvailablePage />} />
+//         <Route path="/contact" element={<Contact />} />
+//         <Route path="/projects" element={<Projects />} />
+//         <Route path="/resume" element={<Resume />} />
+//         <Route path="/blogs" element={<Blog />} />
+//         <Route path="/skills" element={<Skills />} />
+//         <Route path="/exeperience&education" element={<Experience />} />
+//         <Route path="/new" element={<MobileMockup videoUrl={url}/>} />
+//       </Routes>
+//     </Router>
+//   );
+// }
 
 export default App;
